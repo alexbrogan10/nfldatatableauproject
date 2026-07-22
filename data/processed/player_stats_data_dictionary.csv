@@ -1,0 +1,101 @@
+column,category,stat_name,description
+defensive_assistTackles,Defense,Assist Tackles,The number of assists on tackles.
+defensive_longInterception,Defense,Long Interception,The amount of yards of the longest interception return.
+defensive_passesDefended,Defense,Passes Defended,The total number of passes defended.
+defensive_sackYards,Defense,Sack Yards,The number of yards lost from sacks.
+defensive_sacks,Defense,Sacks,The total number of sacks.
+defensive_soloTackles,Defense,Solo Tackles,The number of times a tackle was made unassisted.
+defensive_tacklesForLoss,Defense,Tackles For Loss,The number of tackles that result in a loss of yardage.
+defensive_totalTackles,Defense,Total Tackles,The total number of tackles.
+defensiveinterceptions_interceptionTouchdowns,Defensive Interceptions,Interception Touchdowns,The number of times an interception is returned for a touchdown.
+defensiveinterceptions_interceptionYards,Defensive Interceptions,Interception Yards,The number of yards gained after an interception.
+defensiveinterceptions_interceptions,Defensive Interceptions,Interceptions,The total number of interceptions.
+general_fumblesForced,General,Forced Fumbles,The total number of forced fumbles.
+general_fumblesRecovered,General,Fumbles Recovered,The number of fumbles recovered.
+general_fumblesTouchdowns,General,Fumbles Touchdowns,The number of times a fumbles is recovered and returned for a touchdown.
+general_gamesPlayed,General,Games Played,Games Played
+kicking_extraPointAttempts,Kicking,Extra Point Attempts,The number of extra point attempts.
+kicking_extraPointPct,Kicking,Extra Point Percentage,The percentage of extra point attempts that are converted.
+kicking_extraPointsMade,Kicking,Extra Points Made,The number of extra point attempts made.
+kicking_fieldGoalAttempts,Kicking,Field Goal Attempts,The number of times a field goal is attempted.
+kicking_fieldGoalAttempts1_19,Kicking,Field Goal Attempts 1-19,The number of field goals attempted from 1-19 yards.
+kicking_fieldGoalAttempts20_29,Kicking,Field Goal Attempts 20-29,The number of field goals attempted from 20-29 yards.
+kicking_fieldGoalAttempts30_39,Kicking,Field Goal Attempts 30-39,The number of field goals attempted from 30-39 yards.
+kicking_fieldGoalAttempts40_49,Kicking,Field Goal Attempts 40-49,The number of field goals attempted from 40-49 yards.
+kicking_fieldGoalAttempts50,Kicking,Field Goal Attempts 50+,The number of field goals attempted from 50+ yards.
+kicking_fieldGoalPct,Kicking,Field Goal Percentage,The percentage of field goals attempted that are made.
+kicking_fieldGoalsMade,Kicking,Field Goal Made,The number of times a field goal is made.
+kicking_fieldGoalsMade1_19,Kicking,Field Goals Made 1-19,The number of field goals made from 1-19 yards.
+kicking_fieldGoalsMade20_29,Kicking,Field Goals Made 20-29,The number of field goals made from 20-29 yards.
+kicking_fieldGoalsMade30_39,Kicking,Field Goals Made 30-39,The number of field goals made from 30-39 yards.
+kicking_fieldGoalsMade40_49,Kicking,Field Goals Made 40-49,The number of field goals made from 40-49 yards.
+kicking_fieldGoalsMade50,Kicking,Field Goals Made 50+,The number of field goals made from 50+ yards.
+kicking_longFieldGoalMade,Kicking,Long Field Goal Made,The distance of the longest field goal made.
+passing_QBR,Passing,Total QBR,"Total Quarterback Rating, which values quarterback on all play types on a 0-to-100 scale."
+passing_QBRating,Passing,Passer Rating,Passer Rating
+passing_adjQBR,Passing,Adjusted QBR,Adjusted Quarterback Rating.
+passing_completionPct,Passing,Completion Percentage,The percentage of completed passes.
+passing_completions,Passing,Completions,The times a player completes a pass to another player who is eligible to catch a pass.
+passing_interceptions,Passing,Interceptions,The number of passes thrown that were intercepted by the opposing team.
+passing_longPassing,Passing,Longest Pass,The longest pass play completed in terms of yards.
+passing_passingAttempts,Passing,Passing Attempts,The number of times a pass is attempted.
+passing_passingTouchdowns,Passing,Passing Touchdowns,The total number of passing touchdowns.
+passing_passingYards,Passing,Passing Yards,The total passing yards.
+passing_passingYardsPerGame,Passing,Passing Yards Per Game,The number of passing yards per game.
+passing_sackYardsLost,Passing,Sack Yards Lost,The amount of yards lost due to sacks.
+passing_sacks,Passing,Total Sacks,The total number of sacks.
+passing_yardsPerPassAttempt,Passing,Yards Per Pass Attempt,The average number yards per pass attempt.
+punting_avgPuntReturnYards,Punting,Average Punt Return Yards,The average number of yards per punt return.
+punting_fairCatches,Punting,Fair Catches,The number of fair catches.
+punting_grossAvgPuntYards,Punting,Gross Average Punt Yards,The average gross number of yards per punt.
+punting_longPunt,Punting,Long Punt,The distance of the longest punt.
+punting_netAvgPuntYards,Punting,Net Average Punt Yards,The average net number of yards per punt.
+punting_puntReturnYards,Punting,Punt Return Yards,The total amount of yardage of punt returns.
+punting_puntReturns,Punting,Punt Returns,The number of times a punt was returned.
+punting_puntYards,Punting,Punt Yards,The total amount of yardage of punts.
+punting_punts,Punting,Punts,The number of punts taken.
+punting_puntsBlocked,Punting,Punts Blocked,The number of times a punt was blocked.
+punting_puntsInside20,Punting,Punts Inside 20,The number of times a punt is downed inside the 20.
+punting_touchbacks,Punting,Touchbacks,The number of kickoffs that result in touchbacks.
+receiving_longReception,Receiving,Long Reception,The amount of yards for the longest reception.
+receiving_receivingBigPlays,Receiving,20+ Yard Receiving Plays,The number of receiving big plays gained.
+receiving_receivingFirstDowns,Receiving,Receiving First Downs,The number of times a first down is picked up by a reception.
+receiving_receivingFumbles,Receiving,Receiving Fumbles,The number of times a reception is made and then the ball is fumbled.
+receiving_receivingFumblesLost,Receiving,Receiving Fumbles Lost,The number of times a reception is made and the balled is fumbled and recovered by the opposing team.
+receiving_receivingTargets,Receiving,Receiving Targets,The number of times a receiver is thrown to.
+receiving_receivingTouchdowns,Receiving,Receiving Touchdowns,The total number of receiving touchdowns.
+receiving_receivingYards,Receiving,Receiving Yards,The total receiving yards.
+receiving_receivingYardsAfterCatch,Receiving,Receiving Yards After Catch,The number of yards gained after the catch has been made.
+receiving_receivingYardsPerGame,Receiving,Receiving Yards Per Game,The average number of receiving yards per game.
+receiving_receptions,Receiving,Receptions,The total number of receptions.
+receiving_yardsPerReception,Receiving,Yards Per Reception,The average number of yards per reception.
+returning_kickReturnTouchdowns,Returning,Kick Return Touchdowns,The number of kick return touchdowns.
+returning_kickReturnYards,Returning,Kick Return Yards,The total yardage of kick returns.
+returning_kickReturns,Returning,Kick Returns,The number of kick returns.
+returning_longKickReturn,Returning,Long Kick Return,The longest kick return in yards.
+returning_longPuntReturn,Returning,Long Punt Return,The longest punt return in yards.
+returning_puntReturnFairCatches,Returning,Punt Return Fair Catches,The number of punt return fair catches.
+returning_puntReturnTouchdowns,Returning,Punt Return Touchdowns,The number of punt return touchdowns.
+returning_puntReturnYards,Returning,Punt Return Yards,The total yardage of punt returns.
+returning_puntReturns,Returning,Punt Returns,The number of punt returns.
+returning_yardsPerKickReturn,Returning,Yards Per Kick Return,The average number of yards per kick return.
+returning_yardsPerPuntReturn,Returning,Yards Per Punt Return,The average number of yards per punt return.
+rushing_longRushing,Rushing,Long Rushing,The amount of yards for the longest run.
+rushing_rushingAttempts,Rushing,Rushing Attempts,The total number of attempted rushes.
+rushing_rushingBigPlays,Rushing,20+ Yard Rushing Plays,The number of rushing big plays gained.
+rushing_rushingFirstDowns,Rushing,Rushing 1st downs,The number of times a first down is picked up by a run.
+rushing_rushingFumbles,Rushing,Rushing Fumbles,The number of times there is a run and then the ball is fumbled.
+rushing_rushingFumblesLost,Rushing,Rushing Fumbles Lost,The number of times there is a run and then the ball is fumbled.
+rushing_rushingTouchdowns,Rushing,Rushing Touchdowns,The total number of rushing touchdowns.
+rushing_rushingYards,Rushing,Rushing Yards,The total rushing yards.
+rushing_rushingYardsPerGame,Rushing,Rushing Yards Per Game,The average number of rushing yards per game.
+rushing_yardsPerRushAttempt,Rushing,Yards Per Rush Attempt,The average number of yards per rush attempt.
+scoring_fieldGoals,Scoring,Field Goals,The number of field goals made.
+scoring_kickExtraPoints,Scoring,Kick Extra Points,The number of extra points made.
+scoring_receivingTouchdowns,Scoring,Receiving Touchdowns,The total number of receiving touchdowns.
+scoring_returnTouchdowns,Scoring,Return Touchdowns,The total number of return touchdowns.
+scoring_rushingTouchdowns,Scoring,Rushing Touchdowns,The total number of rushing touchdowns.
+scoring_totalPoints,Scoring,Total Points,The number of total points scored.
+scoring_totalPointsPerGame,Scoring,Total Points Per Game,The number of points scored per game.
+scoring_totalTouchdowns,Scoring,Total Touchdowns,The number of touchdowns scored in total.
+scoring_totalTwoPointConvs,Scoring,Total Two Point Conversions,The number of times a 2-point conversion is successful.

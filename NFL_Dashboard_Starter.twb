@@ -1,0 +1,1897 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- NFL data pre-connected for Tableau. See docs/tableau_guide.md for the
+     join keys between these data sources and a suggested dashboard build-out.
+     No worksheets or dashboards are included; build those in Tableau. -->
+<workbook source-build='2023.1.0' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+  </preferences>
+  <datasources>
+  <datasource caption='games' inline='true' name='federated.148678fde5314a0d' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption='games.csv' name='textscan.96914846755f4a85'>
+          <connection class='textscan' directory='data/processed' filename='games.csv' password='' server='' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.96914846755f4a85' name='games.csv' table='[games#csv]' type='table'>
+      </relation>
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>game_id</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[game_id]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>game_id</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>season</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[season]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>season</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>game_type</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[game_type]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>game_type</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>week</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[week]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>week</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>gameday</remote-name>
+          <remote-type>133</remote-type>
+          <local-name>[gameday]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>gameday</remote-alias>
+          <local-type>date</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>weekday</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[weekday]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>weekday</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>gametime</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[gametime]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>gametime</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>away_team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[away_team]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>away_team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>away_score</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[away_score]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>away_score</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>home_team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[home_team]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>home_team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>home_score</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[home_score]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>home_score</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>location</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[location]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>location</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>result</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[result]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>result</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>total</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[total]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>total</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>overtime</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[overtime]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>overtime</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>div_game</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[div_game]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>div_game</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>roof</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[roof]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>roof</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>surface</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[surface]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>surface</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>stadium</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[stadium]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>stadium</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>completed</remote-name>
+          <remote-type>11</remote-type>
+          <local-name>[completed]</local-name>
+          <parent-name>[games.csv]</parent-name>
+          <remote-alias>completed</remote-alias>
+          <local-type>boolean</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column caption='game_id' datatype='string' name='[game_id]' role='dimension' type='nominal' />
+    <column caption='season' datatype='integer' name='[season]' role='dimension' type='ordinal' />
+    <column caption='game_type' datatype='string' name='[game_type]' role='dimension' type='nominal' />
+    <column caption='week' datatype='integer' name='[week]' role='dimension' type='ordinal' />
+    <column caption='gameday' datatype='date' name='[gameday]' role='dimension' type='ordinal' />
+    <column caption='weekday' datatype='string' name='[weekday]' role='dimension' type='nominal' />
+    <column caption='gametime' datatype='string' name='[gametime]' role='dimension' type='nominal' />
+    <column caption='away_team' datatype='string' name='[away_team]' role='dimension' type='nominal' />
+    <column caption='away_score' datatype='real' name='[away_score]' role='measure' type='quantitative' />
+    <column caption='home_team' datatype='string' name='[home_team]' role='dimension' type='nominal' />
+    <column caption='home_score' datatype='real' name='[home_score]' role='measure' type='quantitative' />
+    <column caption='location' datatype='string' name='[location]' role='dimension' type='nominal' />
+    <column caption='result' datatype='real' name='[result]' role='measure' type='quantitative' />
+    <column caption='total' datatype='real' name='[total]' role='measure' type='quantitative' />
+    <column caption='overtime' datatype='real' name='[overtime]' role='measure' type='quantitative' />
+    <column caption='div_game' datatype='integer' name='[div_game]' role='dimension' type='ordinal' />
+    <column caption='roof' datatype='string' name='[roof]' role='dimension' type='nominal' />
+    <column caption='surface' datatype='string' name='[surface]' role='dimension' type='nominal' />
+    <column caption='stadium' datatype='string' name='[stadium]' role='dimension' type='nominal' />
+    <column caption='completed' datatype='boolean' name='[completed]' role='dimension' type='nominal' />
+  </datasource>
+  <datasource caption='team_standings' inline='true' name='federated.c0a08cc643a948b3' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption='team_standings.csv' name='textscan.435376d09e2b4c6e'>
+          <connection class='textscan' directory='data/processed' filename='team_standings.csv' password='' server='' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.435376d09e2b4c6e' name='team_standings.csv' table='[team_standings#csv]' type='table'>
+      </relation>
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>season</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[season]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>season</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>conf</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[conf]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>conf</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>division</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[division]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>division</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[team]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>wins</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[wins]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>wins</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>losses</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[losses]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>losses</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>ties</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[ties]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>ties</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>pct</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[pct]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>pct</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>div_rank</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[div_rank]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>div_rank</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scored</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[scored]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>scored</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>allowed</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[allowed]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>allowed</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>net</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[net]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>net</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>sov</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[sov]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>sov</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>sos</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[sos]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>sos</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>seed</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[seed]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>seed</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>playoff</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[playoff]</local-name>
+          <parent-name>[team_standings.csv]</parent-name>
+          <remote-alias>playoff</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column caption='season' datatype='integer' name='[season]' role='dimension' type='ordinal' />
+    <column caption='conf' datatype='string' name='[conf]' role='dimension' type='nominal' />
+    <column caption='division' datatype='string' name='[division]' role='dimension' type='nominal' />
+    <column caption='team' datatype='string' name='[team]' role='dimension' type='nominal' />
+    <column caption='wins' datatype='integer' name='[wins]' role='dimension' type='ordinal' />
+    <column caption='losses' datatype='integer' name='[losses]' role='dimension' type='ordinal' />
+    <column caption='ties' datatype='integer' name='[ties]' role='dimension' type='ordinal' />
+    <column caption='pct' datatype='real' name='[pct]' role='measure' type='quantitative' />
+    <column caption='div_rank' datatype='integer' name='[div_rank]' role='dimension' type='ordinal' />
+    <column caption='scored' datatype='integer' name='[scored]' role='dimension' type='ordinal' />
+    <column caption='allowed' datatype='integer' name='[allowed]' role='dimension' type='ordinal' />
+    <column caption='net' datatype='integer' name='[net]' role='dimension' type='ordinal' />
+    <column caption='sov' datatype='real' name='[sov]' role='measure' type='quantitative' />
+    <column caption='sos' datatype='real' name='[sos]' role='measure' type='quantitative' />
+    <column caption='seed' datatype='real' name='[seed]' role='measure' type='quantitative' />
+    <column caption='playoff' datatype='string' name='[playoff]' role='dimension' type='nominal' />
+  </datasource>
+  <datasource caption='weekly_team_results' inline='true' name='federated.0510628af6b74c95' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption='weekly_team_results.csv' name='textscan.601e725521364f55'>
+          <connection class='textscan' directory='data/processed' filename='weekly_team_results.csv' password='' server='' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.601e725521364f55' name='weekly_team_results.csv' table='[weekly_team_results#csv]' type='table'>
+      </relation>
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>game_id</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[game_id]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>game_id</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>season</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[season]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>season</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>game_type</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[game_type]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>game_type</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>week</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[week]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>week</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>gameday</remote-name>
+          <remote-type>133</remote-type>
+          <local-name>[gameday]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>gameday</remote-alias>
+          <local-type>date</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[team]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>opponent</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[opponent]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>opponent</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>team_score</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[team_score]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>team_score</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>opp_score</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[opp_score]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>opp_score</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>is_home</remote-name>
+          <remote-type>11</remote-type>
+          <local-name>[is_home]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>is_home</remote-alias>
+          <local-type>boolean</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>win</remote-name>
+          <remote-type>11</remote-type>
+          <local-name>[win]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>win</remote-alias>
+          <local-type>boolean</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>loss</remote-name>
+          <remote-type>11</remote-type>
+          <local-name>[loss]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>loss</remote-alias>
+          <local-type>boolean</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>tie</remote-name>
+          <remote-type>11</remote-type>
+          <local-name>[tie]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>tie</remote-alias>
+          <local-type>boolean</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>point_diff</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[point_diff]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>point_diff</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>cum_wins</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[cum_wins]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>cum_wins</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>cum_losses</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[cum_losses]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>cum_losses</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>cum_point_diff</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[cum_point_diff]</local-name>
+          <parent-name>[weekly_team_results.csv]</parent-name>
+          <remote-alias>cum_point_diff</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column caption='game_id' datatype='string' name='[game_id]' role='dimension' type='nominal' />
+    <column caption='season' datatype='integer' name='[season]' role='dimension' type='ordinal' />
+    <column caption='game_type' datatype='string' name='[game_type]' role='dimension' type='nominal' />
+    <column caption='week' datatype='integer' name='[week]' role='dimension' type='ordinal' />
+    <column caption='gameday' datatype='date' name='[gameday]' role='dimension' type='ordinal' />
+    <column caption='team' datatype='string' name='[team]' role='dimension' type='nominal' />
+    <column caption='opponent' datatype='string' name='[opponent]' role='dimension' type='nominal' />
+    <column caption='team_score' datatype='real' name='[team_score]' role='measure' type='quantitative' />
+    <column caption='opp_score' datatype='real' name='[opp_score]' role='measure' type='quantitative' />
+    <column caption='is_home' datatype='boolean' name='[is_home]' role='dimension' type='nominal' />
+    <column caption='win' datatype='boolean' name='[win]' role='dimension' type='nominal' />
+    <column caption='loss' datatype='boolean' name='[loss]' role='dimension' type='nominal' />
+    <column caption='tie' datatype='boolean' name='[tie]' role='dimension' type='nominal' />
+    <column caption='point_diff' datatype='real' name='[point_diff]' role='measure' type='quantitative' />
+    <column caption='cum_wins' datatype='integer' name='[cum_wins]' role='dimension' type='ordinal' />
+    <column caption='cum_losses' datatype='integer' name='[cum_losses]' role='dimension' type='ordinal' />
+    <column caption='cum_point_diff' datatype='real' name='[cum_point_diff]' role='measure' type='quantitative' />
+  </datasource>
+  <datasource caption='player_stats' inline='true' name='federated.1a1671c9d7b744e0' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption='player_stats.csv' name='textscan.5b6d4b35309e4bc5'>
+          <connection class='textscan' directory='data/processed' filename='player_stats.csv' password='' server='' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.5b6d4b35309e4bc5' name='player_stats.csv' table='[player_stats#csv]' type='table'>
+      </relation>
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>athlete_id</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[athlete_id]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>athlete_id</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>name</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[name]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>name</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>general_gamesPlayed</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[general_gamesPlayed]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>general_gamesPlayed</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>general_fumblesForced</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[general_fumblesForced]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>general_fumblesForced</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>general_fumblesRecovered</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[general_fumblesRecovered]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>general_fumblesRecovered</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>general_fumblesTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[general_fumblesTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>general_fumblesTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_completions</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_completions]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_completions</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_passingAttempts</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_passingAttempts]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_passingAttempts</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_completionPct</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_completionPct]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_completionPct</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_passingYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_passingYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_passingYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_yardsPerPassAttempt</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_yardsPerPassAttempt]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_yardsPerPassAttempt</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_passingYardsPerGame</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_passingYardsPerGame]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_passingYardsPerGame</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_longPassing</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_longPassing]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_longPassing</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_passingTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_passingTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_passingTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_interceptions</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_interceptions]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_interceptions</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_sacks</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_sacks]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_sacks</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_sackYardsLost</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_sackYardsLost]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_sackYardsLost</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_QBR</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_QBR]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_QBR</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_QBRating</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_QBRating]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_QBRating</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>passing_adjQBR</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[passing_adjQBR]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>passing_adjQBR</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingAttempts</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingAttempts]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingAttempts</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_yardsPerRushAttempt</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_yardsPerRushAttempt]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_yardsPerRushAttempt</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_longRushing</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_longRushing]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_longRushing</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingBigPlays</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingBigPlays]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingBigPlays</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingYardsPerGame</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingYardsPerGame]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingYardsPerGame</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingFumbles</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingFumbles]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingFumbles</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingFumblesLost</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingFumblesLost]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingFumblesLost</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>rushing_rushingFirstDowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[rushing_rushingFirstDowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>rushing_rushingFirstDowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receptions</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receptions]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receptions</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingTargets</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingTargets]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingTargets</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_yardsPerReception</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_yardsPerReception]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_yardsPerReception</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_longReception</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_longReception]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_longReception</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingBigPlays</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingBigPlays]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingBigPlays</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingYardsPerGame</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingYardsPerGame]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingYardsPerGame</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingFumbles</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingFumbles]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingFumbles</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingFumblesLost</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingFumblesLost]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingFumblesLost</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingYardsAfterCatch</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingYardsAfterCatch]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingYardsAfterCatch</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>receiving_receivingFirstDowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[receiving_receivingFirstDowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>receiving_receivingFirstDowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_soloTackles</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_soloTackles]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_soloTackles</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_assistTackles</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_assistTackles]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_assistTackles</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_totalTackles</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_totalTackles]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_totalTackles</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_sacks</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_sacks]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_sacks</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_sackYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_sackYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_sackYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_tacklesForLoss</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_tacklesForLoss]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_tacklesForLoss</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_passesDefended</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_passesDefended]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_passesDefended</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensive_longInterception</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensive_longInterception]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensive_longInterception</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensiveinterceptions_interceptions</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensiveinterceptions_interceptions]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensiveinterceptions_interceptions</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensiveinterceptions_interceptionYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensiveinterceptions_interceptionYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensiveinterceptions_interceptionYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>defensiveinterceptions_interceptionTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[defensiveinterceptions_interceptionTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>defensiveinterceptions_interceptionTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_rushingTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_rushingTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_rushingTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_receivingTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_receivingTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_receivingTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_returnTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_returnTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_returnTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_totalTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_totalTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_totalTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_fieldGoals</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_fieldGoals]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_fieldGoals</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_kickExtraPoints</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_kickExtraPoints]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_kickExtraPoints</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_totalTwoPointConvs</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_totalTwoPointConvs]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_totalTwoPointConvs</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_totalPoints</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_totalPoints]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_totalPoints</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>scoring_totalPointsPerGame</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[scoring_totalPointsPerGame]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>scoring_totalPointsPerGame</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_kickReturns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_kickReturns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_kickReturns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_kickReturnYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_kickReturnYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_kickReturnYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_yardsPerKickReturn</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_yardsPerKickReturn]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_yardsPerKickReturn</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_longKickReturn</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_longKickReturn]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_longKickReturn</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_kickReturnTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_kickReturnTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_kickReturnTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_puntReturns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_puntReturns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_puntReturns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_puntReturnYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_puntReturnYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_puntReturnYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_yardsPerPuntReturn</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_yardsPerPuntReturn]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_yardsPerPuntReturn</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_longPuntReturn</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_longPuntReturn]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_longPuntReturn</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_puntReturnTouchdowns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_puntReturnTouchdowns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_puntReturnTouchdowns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>returning_puntReturnFairCatches</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[returning_puntReturnFairCatches]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>returning_puntReturnFairCatches</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalPct</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalPct]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalPct</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_longFieldGoalMade</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_longFieldGoalMade]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_longFieldGoalMade</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade1_19</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade1_19]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade1_19</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade20_29</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade20_29]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade20_29</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade30_39</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade30_39]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade30_39</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade40_49</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade40_49]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade40_49</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalsMade50</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalsMade50]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalsMade50</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts1_19</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts1_19]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts1_19</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts20_29</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts20_29]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts20_29</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts30_39</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts30_39]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts30_39</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts40_49</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts40_49]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts40_49</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_fieldGoalAttempts50</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_fieldGoalAttempts50]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_fieldGoalAttempts50</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_extraPointsMade</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_extraPointsMade]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_extraPointsMade</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_extraPointAttempts</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_extraPointAttempts]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_extraPointAttempts</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>kicking_extraPointPct</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[kicking_extraPointPct]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>kicking_extraPointPct</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_punts</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_punts]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_punts</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_puntYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_puntYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_puntYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_longPunt</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_longPunt]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_longPunt</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_grossAvgPuntYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_grossAvgPuntYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_grossAvgPuntYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_netAvgPuntYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_netAvgPuntYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_netAvgPuntYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_puntsBlocked</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_puntsBlocked]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_puntsBlocked</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_puntsInside20</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_puntsInside20]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_puntsInside20</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_touchbacks</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_touchbacks]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_touchbacks</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_fairCatches</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_fairCatches]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_fairCatches</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_puntReturns</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_puntReturns]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_puntReturns</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_puntReturnYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_puntReturnYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_puntReturnYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>punting_avgPuntReturnYards</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[punting_avgPuntReturnYards]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>punting_avgPuntReturnYards</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[team]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>position</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[position]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>position</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>season</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[season]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>season</remote-alias>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>fantasy_points_standard</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[fantasy_points_standard]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>fantasy_points_standard</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>fantasy_points_half_ppr</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[fantasy_points_half_ppr]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>fantasy_points_half_ppr</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>fantasy_points_ppr</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[fantasy_points_ppr]</local-name>
+          <parent-name>[player_stats.csv]</parent-name>
+          <remote-alias>fantasy_points_ppr</remote-alias>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column caption='athlete_id' datatype='integer' name='[athlete_id]' role='dimension' type='ordinal' />
+    <column caption='name' datatype='string' name='[name]' role='dimension' type='nominal' />
+    <column caption='general_gamesPlayed' datatype='real' name='[general_gamesPlayed]' role='measure' type='quantitative' />
+    <column caption='general_fumblesForced' datatype='real' name='[general_fumblesForced]' role='measure' type='quantitative' />
+    <column caption='general_fumblesRecovered' datatype='real' name='[general_fumblesRecovered]' role='measure' type='quantitative' />
+    <column caption='general_fumblesTouchdowns' datatype='real' name='[general_fumblesTouchdowns]' role='measure' type='quantitative' />
+    <column caption='passing_completions' datatype='real' name='[passing_completions]' role='measure' type='quantitative' />
+    <column caption='passing_passingAttempts' datatype='real' name='[passing_passingAttempts]' role='measure' type='quantitative' />
+    <column caption='passing_completionPct' datatype='real' name='[passing_completionPct]' role='measure' type='quantitative' />
+    <column caption='passing_passingYards' datatype='real' name='[passing_passingYards]' role='measure' type='quantitative' />
+    <column caption='passing_yardsPerPassAttempt' datatype='real' name='[passing_yardsPerPassAttempt]' role='measure' type='quantitative' />
+    <column caption='passing_passingYardsPerGame' datatype='real' name='[passing_passingYardsPerGame]' role='measure' type='quantitative' />
+    <column caption='passing_longPassing' datatype='real' name='[passing_longPassing]' role='measure' type='quantitative' />
+    <column caption='passing_passingTouchdowns' datatype='real' name='[passing_passingTouchdowns]' role='measure' type='quantitative' />
+    <column caption='passing_interceptions' datatype='real' name='[passing_interceptions]' role='measure' type='quantitative' />
+    <column caption='passing_sacks' datatype='real' name='[passing_sacks]' role='measure' type='quantitative' />
+    <column caption='passing_sackYardsLost' datatype='real' name='[passing_sackYardsLost]' role='measure' type='quantitative' />
+    <column caption='passing_QBR' datatype='real' name='[passing_QBR]' role='measure' type='quantitative' />
+    <column caption='passing_QBRating' datatype='real' name='[passing_QBRating]' role='measure' type='quantitative' />
+    <column caption='passing_adjQBR' datatype='real' name='[passing_adjQBR]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingAttempts' datatype='real' name='[rushing_rushingAttempts]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingYards' datatype='real' name='[rushing_rushingYards]' role='measure' type='quantitative' />
+    <column caption='rushing_yardsPerRushAttempt' datatype='real' name='[rushing_yardsPerRushAttempt]' role='measure' type='quantitative' />
+    <column caption='rushing_longRushing' datatype='real' name='[rushing_longRushing]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingBigPlays' datatype='real' name='[rushing_rushingBigPlays]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingTouchdowns' datatype='real' name='[rushing_rushingTouchdowns]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingYardsPerGame' datatype='real' name='[rushing_rushingYardsPerGame]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingFumbles' datatype='real' name='[rushing_rushingFumbles]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingFumblesLost' datatype='real' name='[rushing_rushingFumblesLost]' role='measure' type='quantitative' />
+    <column caption='rushing_rushingFirstDowns' datatype='real' name='[rushing_rushingFirstDowns]' role='measure' type='quantitative' />
+    <column caption='receiving_receptions' datatype='real' name='[receiving_receptions]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingTargets' datatype='real' name='[receiving_receivingTargets]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingYards' datatype='real' name='[receiving_receivingYards]' role='measure' type='quantitative' />
+    <column caption='receiving_yardsPerReception' datatype='real' name='[receiving_yardsPerReception]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingTouchdowns' datatype='real' name='[receiving_receivingTouchdowns]' role='measure' type='quantitative' />
+    <column caption='receiving_longReception' datatype='real' name='[receiving_longReception]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingBigPlays' datatype='real' name='[receiving_receivingBigPlays]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingYardsPerGame' datatype='real' name='[receiving_receivingYardsPerGame]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingFumbles' datatype='real' name='[receiving_receivingFumbles]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingFumblesLost' datatype='real' name='[receiving_receivingFumblesLost]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingYardsAfterCatch' datatype='real' name='[receiving_receivingYardsAfterCatch]' role='measure' type='quantitative' />
+    <column caption='receiving_receivingFirstDowns' datatype='real' name='[receiving_receivingFirstDowns]' role='measure' type='quantitative' />
+    <column caption='defensive_soloTackles' datatype='real' name='[defensive_soloTackles]' role='measure' type='quantitative' />
+    <column caption='defensive_assistTackles' datatype='real' name='[defensive_assistTackles]' role='measure' type='quantitative' />
+    <column caption='defensive_totalTackles' datatype='real' name='[defensive_totalTackles]' role='measure' type='quantitative' />
+    <column caption='defensive_sacks' datatype='real' name='[defensive_sacks]' role='measure' type='quantitative' />
+    <column caption='defensive_sackYards' datatype='real' name='[defensive_sackYards]' role='measure' type='quantitative' />
+    <column caption='defensive_tacklesForLoss' datatype='real' name='[defensive_tacklesForLoss]' role='measure' type='quantitative' />
+    <column caption='defensive_passesDefended' datatype='real' name='[defensive_passesDefended]' role='measure' type='quantitative' />
+    <column caption='defensive_longInterception' datatype='real' name='[defensive_longInterception]' role='measure' type='quantitative' />
+    <column caption='defensiveinterceptions_interceptions' datatype='real' name='[defensiveinterceptions_interceptions]' role='measure' type='quantitative' />
+    <column caption='defensiveinterceptions_interceptionYards' datatype='real' name='[defensiveinterceptions_interceptionYards]' role='measure' type='quantitative' />
+    <column caption='defensiveinterceptions_interceptionTouchdowns' datatype='real' name='[defensiveinterceptions_interceptionTouchdowns]' role='measure' type='quantitative' />
+    <column caption='scoring_rushingTouchdowns' datatype='real' name='[scoring_rushingTouchdowns]' role='measure' type='quantitative' />
+    <column caption='scoring_receivingTouchdowns' datatype='real' name='[scoring_receivingTouchdowns]' role='measure' type='quantitative' />
+    <column caption='scoring_returnTouchdowns' datatype='real' name='[scoring_returnTouchdowns]' role='measure' type='quantitative' />
+    <column caption='scoring_totalTouchdowns' datatype='real' name='[scoring_totalTouchdowns]' role='measure' type='quantitative' />
+    <column caption='scoring_fieldGoals' datatype='real' name='[scoring_fieldGoals]' role='measure' type='quantitative' />
+    <column caption='scoring_kickExtraPoints' datatype='real' name='[scoring_kickExtraPoints]' role='measure' type='quantitative' />
+    <column caption='scoring_totalTwoPointConvs' datatype='real' name='[scoring_totalTwoPointConvs]' role='measure' type='quantitative' />
+    <column caption='scoring_totalPoints' datatype='real' name='[scoring_totalPoints]' role='measure' type='quantitative' />
+    <column caption='scoring_totalPointsPerGame' datatype='real' name='[scoring_totalPointsPerGame]' role='measure' type='quantitative' />
+    <column caption='returning_kickReturns' datatype='real' name='[returning_kickReturns]' role='measure' type='quantitative' />
+    <column caption='returning_kickReturnYards' datatype='real' name='[returning_kickReturnYards]' role='measure' type='quantitative' />
+    <column caption='returning_yardsPerKickReturn' datatype='real' name='[returning_yardsPerKickReturn]' role='measure' type='quantitative' />
+    <column caption='returning_longKickReturn' datatype='real' name='[returning_longKickReturn]' role='measure' type='quantitative' />
+    <column caption='returning_kickReturnTouchdowns' datatype='real' name='[returning_kickReturnTouchdowns]' role='measure' type='quantitative' />
+    <column caption='returning_puntReturns' datatype='real' name='[returning_puntReturns]' role='measure' type='quantitative' />
+    <column caption='returning_puntReturnYards' datatype='real' name='[returning_puntReturnYards]' role='measure' type='quantitative' />
+    <column caption='returning_yardsPerPuntReturn' datatype='real' name='[returning_yardsPerPuntReturn]' role='measure' type='quantitative' />
+    <column caption='returning_longPuntReturn' datatype='real' name='[returning_longPuntReturn]' role='measure' type='quantitative' />
+    <column caption='returning_puntReturnTouchdowns' datatype='real' name='[returning_puntReturnTouchdowns]' role='measure' type='quantitative' />
+    <column caption='returning_puntReturnFairCatches' datatype='real' name='[returning_puntReturnFairCatches]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade' datatype='real' name='[kicking_fieldGoalsMade]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts' datatype='real' name='[kicking_fieldGoalAttempts]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalPct' datatype='real' name='[kicking_fieldGoalPct]' role='measure' type='quantitative' />
+    <column caption='kicking_longFieldGoalMade' datatype='real' name='[kicking_longFieldGoalMade]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade1_19' datatype='real' name='[kicking_fieldGoalsMade1_19]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade20_29' datatype='real' name='[kicking_fieldGoalsMade20_29]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade30_39' datatype='real' name='[kicking_fieldGoalsMade30_39]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade40_49' datatype='real' name='[kicking_fieldGoalsMade40_49]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalsMade50' datatype='real' name='[kicking_fieldGoalsMade50]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts1_19' datatype='real' name='[kicking_fieldGoalAttempts1_19]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts20_29' datatype='real' name='[kicking_fieldGoalAttempts20_29]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts30_39' datatype='real' name='[kicking_fieldGoalAttempts30_39]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts40_49' datatype='real' name='[kicking_fieldGoalAttempts40_49]' role='measure' type='quantitative' />
+    <column caption='kicking_fieldGoalAttempts50' datatype='real' name='[kicking_fieldGoalAttempts50]' role='measure' type='quantitative' />
+    <column caption='kicking_extraPointsMade' datatype='real' name='[kicking_extraPointsMade]' role='measure' type='quantitative' />
+    <column caption='kicking_extraPointAttempts' datatype='real' name='[kicking_extraPointAttempts]' role='measure' type='quantitative' />
+    <column caption='kicking_extraPointPct' datatype='real' name='[kicking_extraPointPct]' role='measure' type='quantitative' />
+    <column caption='punting_punts' datatype='real' name='[punting_punts]' role='measure' type='quantitative' />
+    <column caption='punting_puntYards' datatype='real' name='[punting_puntYards]' role='measure' type='quantitative' />
+    <column caption='punting_longPunt' datatype='real' name='[punting_longPunt]' role='measure' type='quantitative' />
+    <column caption='punting_grossAvgPuntYards' datatype='real' name='[punting_grossAvgPuntYards]' role='measure' type='quantitative' />
+    <column caption='punting_netAvgPuntYards' datatype='real' name='[punting_netAvgPuntYards]' role='measure' type='quantitative' />
+    <column caption='punting_puntsBlocked' datatype='real' name='[punting_puntsBlocked]' role='measure' type='quantitative' />
+    <column caption='punting_puntsInside20' datatype='real' name='[punting_puntsInside20]' role='measure' type='quantitative' />
+    <column caption='punting_touchbacks' datatype='real' name='[punting_touchbacks]' role='measure' type='quantitative' />
+    <column caption='punting_fairCatches' datatype='real' name='[punting_fairCatches]' role='measure' type='quantitative' />
+    <column caption='punting_puntReturns' datatype='real' name='[punting_puntReturns]' role='measure' type='quantitative' />
+    <column caption='punting_puntReturnYards' datatype='real' name='[punting_puntReturnYards]' role='measure' type='quantitative' />
+    <column caption='punting_avgPuntReturnYards' datatype='real' name='[punting_avgPuntReturnYards]' role='measure' type='quantitative' />
+    <column caption='team' datatype='string' name='[team]' role='dimension' type='nominal' />
+    <column caption='position' datatype='string' name='[position]' role='dimension' type='nominal' />
+    <column caption='season' datatype='integer' name='[season]' role='dimension' type='ordinal' />
+    <column caption='fantasy_points_standard' datatype='real' name='[fantasy_points_standard]' role='measure' type='quantitative' />
+    <column caption='fantasy_points_half_ppr' datatype='real' name='[fantasy_points_half_ppr]' role='measure' type='quantitative' />
+    <column caption='fantasy_points_ppr' datatype='real' name='[fantasy_points_ppr]' role='measure' type='quantitative' />
+  </datasource>
+  <datasource caption='teams' inline='true' name='federated.dd7a5380e4bb4ab6' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption='teams.csv' name='textscan.6c410f6750d9455f'>
+          <connection class='textscan' directory='data/processed' filename='teams.csv' password='' server='' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.6c410f6750d9455f' name='teams.csv' table='[teams#csv]' type='table'>
+      </relation>
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>team</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[team]</local-name>
+          <parent-name>[teams.csv]</parent-name>
+          <remote-alias>team</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>team_full_name</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[team_full_name]</local-name>
+          <parent-name>[teams.csv]</parent-name>
+          <remote-alias>team_full_name</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>conf</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[conf]</local-name>
+          <parent-name>[teams.csv]</parent-name>
+          <remote-alias>conf</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>division</remote-name>
+          <remote-type>130</remote-type>
+          <local-name>[division]</local-name>
+          <parent-name>[teams.csv]</parent-name>
+          <remote-alias>division</remote-alias>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column caption='team' datatype='string' name='[team]' role='dimension' type='nominal' />
+    <column caption='team_full_name' datatype='string' name='[team_full_name]' role='dimension' type='nominal' />
+    <column caption='conf' datatype='string' name='[conf]' role='dimension' type='nominal' />
+    <column caption='division' datatype='string' name='[division]' role='dimension' type='nominal' />
+  </datasource>
+  </datasources>
+</workbook>
