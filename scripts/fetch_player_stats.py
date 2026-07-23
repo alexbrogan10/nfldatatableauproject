@@ -26,6 +26,11 @@ STATS_URL = (
 )
 ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team}/roster"
 
+# ESPN uses a couple of team abbreviations that differ from nflverse's
+# (used in games.csv/team_standings.csv). Normalize to the nflverse form so
+# `team` is a consistent join key across every processed CSV.
+TEAM_ABBR_NORMALIZE = {"LAR": "LA", "WSH": "WAS"}
+
 TEAM_ABBRS = [
     "ari", "atl", "bal", "buf", "car", "chi", "cin", "cle", "dal", "den",
     "det", "gb", "hou", "ind", "jax", "kc", "lac", "lar", "lv", "mia",
@@ -36,11 +41,13 @@ TEAM_ABBRS = [
 SESSION = requests.Session()
 
 
-def fetch_player_stat_pages() -> list[dict]:
+def fetch_player_stat_pages() -> tuple[list[dict], list[dict]]:
     """Paginate through the whole league sorted by games played, collecting
     every athlete's full stat line (all categories come back regardless of
     sort field). Stat field names live in the response's top-level
-    `categories` schema (keyed by category name), not on each athlete."""
+    `categories` schema (keyed by category name), not on each athlete.
+
+    Returns (athlete_rows, data_dictionary_rows)."""
     # NOTE: this ESPN endpoint's `page`+`limit` pagination has an undocumented
     # quirk where specific (page, limit) combinations silently return zero
     # athletes even though more data exists (reproducible, not rate-limiting;
@@ -50,6 +57,7 @@ def fetch_player_stat_pages() -> list[dict]:
     # than trying to fully explain the server-side bug.
     athletes: dict[str, dict] = {}
     category_names: dict[str, list[str]] = {}
+    data_dictionary: dict[str, dict] = {}
     start = 0
     limit = PAGE_LIMIT
     consecutive_skips = 0
@@ -84,7 +92,20 @@ def fetch_player_stat_pages() -> list[dict]:
             continue
 
         for cat_schema in data.get("categories", []):
+            is_new_category = cat_schema["name"] not in category_names
             category_names.setdefault(cat_schema["name"], cat_schema["names"])
+            if is_new_category:
+                for name, display_name, desc in zip(
+                    cat_schema["names"],
+                    cat_schema.get("displayNames", cat_schema["names"]),
+                    cat_schema.get("descriptions", [""] * len(cat_schema["names"])),
+                ):
+                    data_dictionary[f"{cat_schema['name']}_{name}"] = {
+                        "column": f"{cat_schema['name']}_{name}",
+                        "category": cat_schema.get("displayName", cat_schema["name"]).removeprefix("Own "),
+                        "stat_name": display_name,
+                        "description": desc,
+                    }
 
         for a in page_athletes:
             athlete_id = a["athlete"]["id"]
@@ -109,7 +130,7 @@ def fetch_player_stat_pages() -> list[dict]:
         consecutive_skips = 0
         time.sleep(0.2)
 
-    return list(athletes.values())
+    return list(athletes.values()), list(data_dictionary.values())
 
 
 def fetch_team_rosters() -> pd.DataFrame:
@@ -120,6 +141,7 @@ def fetch_team_rosters() -> pd.DataFrame:
         resp.raise_for_status()
         data = resp.json()
         team_abbr = data.get("team", {}).get("abbreviation", team.upper())
+        team_abbr = TEAM_ABBR_NORMALIZE.get(team_abbr, team_abbr)
         for group in data.get("athletes", []):
             for item in group.get("items", []):
                 rows.append({
@@ -156,9 +178,13 @@ def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     print(f"Fetching {SEASON} player stat leaderboard from ESPN ...")
-    stat_rows = fetch_player_stat_pages()
+    stat_rows, data_dictionary_rows = fetch_player_stat_pages()
     stats_df = pd.DataFrame(stat_rows)
     print(f"  pulled stats for {len(stats_df)} athletes")
+
+    dictionary_df = pd.DataFrame(data_dictionary_rows).sort_values(["category", "column"])
+    dictionary_df.to_csv(OUT_DIR / "player_stats_data_dictionary.csv", index=False)
+    print(f"  wrote {len(dictionary_df)} rows -> data/processed/player_stats_data_dictionary.csv")
 
     print("Fetching team rosters for position/team enrichment ...")
     rosters_df = fetch_team_rosters()
