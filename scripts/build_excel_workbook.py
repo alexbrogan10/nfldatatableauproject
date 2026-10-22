@@ -212,6 +212,7 @@ def write_tables(frames, path):
         ("     Source: nfl_free_agency.db (offseason_moves table). Many moves have no reported value.", False),
         ("", False),
         ("Pivot sheets (start with 'PT -'): drag fields in the PivotTable Fields pane to explore further.", True),
+        ("Each pivot sheet has a PivotChart to the right of its slicers; the chart follows the pivot's filters and slicers.", False),
         ("After editing data on a table sheet: Data > Refresh All updates every pivot.", False),
     ]
     for r, (text, bold) in enumerate(lines, start=1):
@@ -237,6 +238,11 @@ XL_SUM, XL_COUNT, XL_AVERAGE = -4157, -4112, -4106
 XL_TOP_COUNT = 1
 XL_DESCENDING = 2
 XL_TABULAR = 1
+XL_RUNNING_TOTAL, XL_PERCENT_OF_ROW = 5, 6
+XL_LINE, XL_COLUMN_CLUSTERED, XL_COLUMN_STACKED_100 = 4, 51, 53
+XL_BAR_CLUSTERED, XL_BAR_STACKED = 57, 58
+XL_CATEGORY, XL_VALUE, XL_SECONDARY = 1, 2, 2
+XL_LEGEND_TOP, XL_LEGEND_RIGHT, XL_TICK_LABELS_LOW = -4160, -4152, -4134
 
 
 def add_pivots(path, has_free_agency):
@@ -285,11 +291,48 @@ def add_pivots(path, has_free_agency):
             ws.Range("A1").ColumnWidth = max(ws.Range("A1").ColumnWidth, 14)
             return pt
 
+        def chart(pt, chart_type, title, height=420, width=560, hide=(), horizontal=False,
+                  value_format=None, below=False):
+            """PivotChart to the right of the pivot and its slicers (or under the
+            pivot when `below`). `hide` names data fields to leave off the chart
+            (they stay in the pivot)."""
+            ws = pt.Parent
+            if below:
+                left, top = ws.Range("A1").Left, pt.TableRange2.Top + pt.TableRange2.Height + 20
+            else:
+                left, top = pt.TableRange2.Left + pt.TableRange2.Width, ws.Range("A3").Top
+                for shape in ws.Shapes:
+                    left = max(left, shape.Left + shape.Width)
+                left += 20
+            ch = ws.Shapes.AddChart2(-1, chart_type, left, top, width, height).Chart
+            ch.SetSourceData(pt.TableRange1)
+            ch.HasTitle = True
+            ch.ChartTitle.Text = title
+            ch.ShowAllFieldButtons = False  # the slicers/report filters do the filtering
+            ch.HasLegend = True
+            ch.Legend.Position = XL_LEGEND_TOP
+            if horizontal:  # bar charts plot bottom-up; match the pivot's top-down order
+                ch.Axes(XL_CATEGORY).ReversePlotOrder = True
+            if value_format:
+                ch.Axes(XL_VALUE).TickLabels.NumberFormat = value_format
+            for i in range(ch.SeriesCollection().Count, 0, -1):
+                if ch.SeriesCollection(i).Name in hide:
+                    ch.SeriesCollection(i).Format.Fill.Visible = False
+                    ch.SeriesCollection(i).Format.Line.Visible = False
+                    if ch.HasLegend:
+                        ch.Legend.LegendEntries(i).Delete()
+            if hide:  # let the visible series fill the space the hidden ones would take
+                ch.ChartGroups(1).Overlap = 100
+                ch.ChartGroups(1).GapWidth = 50
+            return ch
+
         pt = pivot("PT - Wins by Season", "tblStandings",
                    "Wins by team and season (filter by conference; Grand Total = wins since 2021)",
                    rows=("division", "team_full_name"), cols=("season",),
                    filters=("conf",), values=(("wins", XL_SUM, "Wins ", "0"),),
                    slicers=("made_playoffs",))
+        chart(pt, XL_BAR_STACKED, "Total wins 2021-2025 (one color per season)",
+              height=760, horizontal=True)
 
         pt = pivot("PT - Playoffs", "tblStandings",
                    "How far each team got: count of seasons by playoff result",
@@ -297,6 +340,12 @@ def add_pivots(path, has_free_agency):
                    filters=("conf", "division"),
                    values=(("season", XL_COUNT, "Seasons", "0"),),
                    slicers=("season",))
+        result = pt.PivotFields("playoff")
+        for pos, item in enumerate(("Missed", "LostWC", "LostDV", "LostCC", "LostSB", "WonSB"), 1):
+            result.PivotItems(item).Position = pos
+        ch = chart(pt, XL_BAR_STACKED, "Seasons by how far the team got", height=760,
+                   horizontal=True)
+        ch.SeriesCollection("Missed").Format.Fill.ForeColor.RGB = 0xBFBFBF  # grey: no playoffs
 
         pt = pivot("PT - Home Field", "tblGames",
                    "Home-field advantage: who won, by venue type (played games only)",
@@ -304,13 +353,23 @@ def add_pivots(path, has_free_agency):
                    values=(("game_id", XL_COUNT, "Share of Games", "0.0%"),),
                    slicers=("season", "surface"))
         pt.PivotFields("completed").CurrentPage = "Yes"
-        pt.DataFields.Item("Share of Games").Calculation = 6  # xlPercentOfRow
+        pt.DataFields.Item("Share of Games").Calculation = XL_PERCENT_OF_ROW
+        chart(pt, XL_COLUMN_STACKED_100, "Who wins, by roof type", height=340)
 
+        # Weeks down the side so the PivotChart draws one line per team across the season
         pt = pivot("PT - 2025 Point Diff", "tblWeekly2025",
-                   "2025 season: point differential each week (Grand Total = season net; double-click a cell to see the game)",
-                   rows=("team_full_name",), cols=("week",),
-                   filters=("game_type",), values=(("point_diff", XL_SUM, "Point Diff", "+0;-0;0"),),
+                   "2025 season: cumulative point differential by week (pick a division in the slicer to compare 4 teams)",
+                   rows=("week",), cols=("team",),
+                   filters=("game_type",), values=(("point_diff", XL_SUM, "Cumulative Point Diff", "+0;-0;0"),),
                    slicers=("conf", "division"))
+        cumulative = pt.DataFields.Item("Cumulative Point Diff")
+        cumulative.Calculation = XL_RUNNING_TOTAL
+        cumulative.BaseField = "week"
+        pt.ColumnGrand = False  # a running total's grand total is just the last week again
+        ch = chart(pt, XL_LINE, "Cumulative point differential, 2025", height=660, width=820,
+                   below=True)  # the 32-team pivot is too wide to put the chart beside it
+        ch.Legend.Position = XL_LEGEND_RIGHT
+        ch.Axes(XL_CATEGORY).TickLabelPosition = XL_TICK_LABELS_LOW  # keep weeks off the zero line
 
         pt = pivot("PT - Fantasy Leaders", "tblPlayers2025",
                    "Top 10 fantasy scorers (PPR) per position group, 2025",
@@ -331,6 +390,9 @@ def add_pivots(path, has_free_agency):
         player = pt.PivotFields("Player")
         player.AutoSort(XL_DESCENDING, "PPR Pts")
         player.PivotFilters.Add2(Type=XL_TOP_COUNT, DataField=pt.DataFields.Item("PPR Pts"), Value1=10)
+        ch = chart(pt, XL_BAR_CLUSTERED, "PPR points, top 10 per position", height=900,
+                   horizontal=True, hide=("Half PPR Pts", "Std Pts", "Games Played"))
+        ch.HasLegend = False
 
         if has_free_agency:
             pt = pivot("PT - Free Agency", "tblFreeAgency2026",
@@ -339,6 +401,7 @@ def add_pivots(path, has_free_agency):
                        filters=("Conference", "Position Group"),
                        values=(("Player", XL_COUNT, "Moves", "0"),),
                        slicers=("Division",))
+            chart(pt, XL_BAR_STACKED, "2026 offseason moves by team", height=760, horizontal=True)
 
             pt = pivot("PT - FA Spending", "tblFreeAgency2026",
                        "2026 offseason: reported contract value by position group (blank values excluded)",
@@ -348,6 +411,12 @@ def add_pivots(path, has_free_agency):
                                ("Player", XL_COUNT, "Moves", "0")),
                        slicers=("Team Name",))
             pt.PivotFields("Position Group").AutoSort(XL_DESCENDING, "Total Value")
+            ch = chart(pt, XL_COLUMN_CLUSTERED, "Reported contract value (bars) and avg APY (line)",
+                       height=420, width=640, hide=("Moves",), value_format='$#,##0,,"M"')
+            apy = ch.SeriesCollection("Avg APY")
+            apy.ChartType = XL_LINE
+            apy.AxisGroup = XL_SECONDARY
+            ch.Axes(XL_VALUE, XL_SECONDARY).TickLabels.NumberFormat = '$#,##0.0,,"M"'
 
         # Put the pivots right after README so they're the first thing you see
         n_pivots = sum(1 for s in wb.Worksheets if s.Name.startswith("PT - "))
@@ -355,10 +424,13 @@ def add_pivots(path, has_free_agency):
             wb.Worksheets(wb.Worksheets.Count - n_pivots + 1 + i).Move(After=wb.Worksheets(1 + i))
         wb.Worksheets("README").Activate()
         wb.Save()
-        print(f"Added {n_pivots} PivotTable sheets")
+        print(f"Added {n_pivots} PivotTable sheets, each with a PivotChart")
     finally:
-        wb.Close(SaveChanges=False)
-        excel.Quit()
+        try:
+            wb.Close(SaveChanges=False)
+            excel.Quit()
+        except Exception:
+            pass  # Excel already crashed; don't hide the original error
 
 
 def main():
@@ -375,7 +447,17 @@ def main():
     frames = build_frames()
     write_tables(frames, OUTPUT)
     if not args.no_pivots:
-        add_pivots(OUTPUT, "Free Agency 2026" in frames)
+        # Excel automation occasionally fails mid-chart (roughly 1 run in 5);
+        # start again from freshly written tables rather than a half-built file
+        for attempt in range(1, 4):
+            try:
+                add_pivots(OUTPUT, "Free Agency 2026" in frames)
+                break
+            except Exception as exc:
+                if attempt == 3:
+                    raise
+                print(f"Excel step failed ({exc}); retrying ({attempt}/2)")
+                write_tables(frames, OUTPUT)
 
 
 if __name__ == "__main__":
