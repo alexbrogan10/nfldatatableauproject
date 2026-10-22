@@ -14,22 +14,31 @@ upcoming games.
 
 ```
 data/processed/
-  games.csv                 All games 2021–2026, one row per game (scores, teams, week, venue)
-  team_standings.csv        Season standings 2021–2025 (division rank, record, points, playoff result)
-  weekly_team_results.csv   2025 season unpivoted to one row per team per game (for trend lines)
-  player_stats.csv          2025 season player stats: passing/rushing/receiving/defense/kicking + fantasy points
+  games.csv                          All games 2021–2026, one row per game (scores, teams, week, venue)
+  team_standings.csv                 Season standings 2021–2025 (division rank, record, points, playoff result)
+  weekly_team_results.csv            2025 season unpivoted to one row per team per game (for trend lines)
+  player_stats.csv                   2025 season player stats: passing/rushing/receiving/defense/kicking + fantasy points
+  player_stats_data_dictionary.csv   What every player_stats.csv column means
+  teams.csv                          Team abbreviation -> full name/conference/division lookup
+  offseason_moves_2026.csv           2026 signings/trades/extensions, exported from nfl_free_agency.db
 
 scripts/
-  fetch_games.py            Pulls games.csv + standings.csv from nflverse/nfldata, writes the processed files above
-  fetch_player_stats.py     Pulls ESPN's player stat leaderboard + team rosters, computes fantasy points
+  fetch_games.py               Pulls games.csv + standings.csv from nflverse/nfldata, writes games/standings/weekly/teams
+  fetch_player_stats.py        Pulls ESPN's player stat leaderboard + team rosters, computes fantasy points
+  build_tableau_workbook.py    Generates NFL_Dashboard_Starter.twb from the processed CSVs
+  build_excel_workbook.py      Generates NFL_Analysis.xlsx (Excel Tables + PivotTables + slicers)
 
 docs/
-  tableau_guide.md          Data model, join keys, and a suggested dashboard build-out for Tableau
+  tableau_guide.md          Data model, join keys, calculated-field recipes, and a suggested dashboard build-out
+
+NFL_Dashboard_Starter.twb   Tableau workbook with all 5 CSVs pre-connected (no worksheets built yet)
+NFL_Analysis.xlsx           Excel version: every dataset as an Excel Table, plus 7 ready-made PivotTables
 ```
 
 The processed CSVs are committed to the repo, so you can open them directly
 in Tableau without running anything. Re-run the scripts later to refresh
-with new data (e.g. once the 2026 season starts).
+with new data (e.g. once the 2026 season starts) — if you do, also re-run
+`build_tableau_workbook.py` to regenerate the starter workbook.
 
 ## Data sources
 
@@ -47,6 +56,7 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python scripts/fetch_games.py
 python scripts/fetch_player_stats.py
+python scripts/build_tableau_workbook.py
 ```
 
 To pull a different season, edit `SEASON`/`CURRENT_SEASON` at the top of
@@ -54,6 +64,35 @@ each script.
 
 ## Building the Tableau dashboard
 
-See `docs/tableau_guide.md` for the data model (join keys between the four
-CSVs), field notes, and a suggested set of sheets/dashboards to build for
-team performance, player stats, game results, and fantasy football.
+Open `NFL_Dashboard_Starter.twb` in Tableau Desktop/Public to start from the
+five CSVs already connected with correct column types, or connect them
+manually — either way, see `docs/tableau_guide.md` for the data model (join
+keys between the CSVs), ready-to-paste calculated fields, and a suggested
+set of sheets/dashboards to build for team performance, player stats, game
+results, and fantasy football.
+
+## Excel / PivotTables
+
+`NFL_Analysis.xlsx` has each dataset as a named Excel Table (`tblStandings`,
+`tblGames`, `tblWeekly2025`, `tblPlayers2025`, `tblFreeAgency2026`, ...) with
+helper columns (full team name, conference, division, position group) so
+PivotTables can group without joins. The `PT -` sheets are ready-made
+PivotTables with slicers:
+
+| Sheet | Question it answers |
+|---|---|
+| PT - Wins by Season | Wins per team per season, grouped by division |
+| PT - Playoffs | How often each team missed / lost in each round / won the SB |
+| PT - Home Field | Home vs. away win share by roof type (dome, outdoors...) |
+| PT - 2025 Point Diff | Week-by-week point differential, 2025 |
+| PT - Fantasy Leaders | Top 10 PPR scorers per position group, filterable by team |
+| PT - Free Agency | 2026 offseason moves by team and move type |
+| PT - FA Spending | Reported contract dollars and APY by position |
+
+Rebuild it (Windows with Excel installed; `pip install pandas openpyxl pywin32`):
+
+```bash
+python scripts/build_excel_workbook.py                                  # tables + pivots
+python scripts/build_excel_workbook.py --no-pivots                      # tables only, no Excel needed
+python scripts/build_excel_workbook.py --free-agency-db ../nfl_free_agency.db   # refresh free agency CSV first
+```

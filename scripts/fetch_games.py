@@ -48,6 +48,33 @@ def build_standings() -> pd.DataFrame:
     return df.sort_values(["season", "conf", "division", "wins"], ascending=[True, True, True, False])
 
 
+# Full names for the current 32 franchises, keyed by the nflverse abbreviation
+# used in games.csv/team_standings.csv (also normalized into player_stats.csv).
+TEAM_FULL_NAMES = {
+    "ARI": "Arizona Cardinals", "ATL": "Atlanta Falcons", "BAL": "Baltimore Ravens",
+    "BUF": "Buffalo Bills", "CAR": "Carolina Panthers", "CHI": "Chicago Bears",
+    "CIN": "Cincinnati Bengals", "CLE": "Cleveland Browns", "DAL": "Dallas Cowboys",
+    "DEN": "Denver Broncos", "DET": "Detroit Lions", "GB": "Green Bay Packers",
+    "HOU": "Houston Texans", "IND": "Indianapolis Colts", "JAX": "Jacksonville Jaguars",
+    "KC": "Kansas City Chiefs", "LA": "Los Angeles Rams", "LAC": "Los Angeles Chargers",
+    "LV": "Las Vegas Raiders", "MIA": "Miami Dolphins", "MIN": "Minnesota Vikings",
+    "NE": "New England Patriots", "NO": "New Orleans Saints", "NYG": "New York Giants",
+    "NYJ": "New York Jets", "PHI": "Philadelphia Eagles", "PIT": "Pittsburgh Steelers",
+    "SEA": "Seattle Seahawks", "SF": "San Francisco 49ers", "TB": "Tampa Bay Buccaneers",
+    "TEN": "Tennessee Titans", "WAS": "Washington Commanders",
+}
+
+
+def build_teams(standings: pd.DataFrame, season: int) -> pd.DataFrame:
+    """One row per team: abbreviation, full name, conference, division."""
+    season_standings = standings[standings["season"] == season][["team", "conf", "division"]]
+    teams = season_standings.drop_duplicates("team").copy()
+    teams["team_full_name"] = teams["team"].map(TEAM_FULL_NAMES)
+    return teams.sort_values(["conf", "division", "team"])[
+        ["team", "team_full_name", "conf", "division"]
+    ]
+
+
 def build_weekly_team_results(games: pd.DataFrame, season: int) -> pd.DataFrame:
     """Unpivot home/away games into one row per team per game for trend charts."""
     season_games = games[(games["season"] == season) & (games["completed"])].copy()
@@ -96,6 +123,11 @@ def main() -> None:
     weekly = build_weekly_team_results(games, CURRENT_SEASON)
     weekly.to_csv(OUT_DIR / "weekly_team_results.csv", index=False)
     print(f"  wrote {len(weekly)} rows -> data/processed/weekly_team_results.csv")
+
+    print("Building teams.csv reference table ...")
+    teams = build_teams(standings, CURRENT_SEASON)
+    teams.to_csv(OUT_DIR / "teams.csv", index=False)
+    print(f"  wrote {len(teams)} rows -> data/processed/teams.csv")
 
 
 if __name__ == "__main__":
