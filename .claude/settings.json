@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(.venv/bin/*)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git log)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git branch)",
+      "Bash(git branch *)",
+      "Bash(mkdir *)",
+      "Bash(ls)",
+      "Bash(ls *)",
+      "Bash(scripts/*.py)"
+    ]
+  }
+}

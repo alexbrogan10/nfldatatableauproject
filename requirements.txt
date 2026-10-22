@@ -1,2 +1,4 @@
 pandas>=2.0
 requests>=2.31
+openpyxl>=3.1
+pywin32>=306; sys_platform == "win32"
