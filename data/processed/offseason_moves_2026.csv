@@ -1,0 +1,436 @@
+Team,Division,move_type,Player,Position,contract_years,total_value,guarantees,season
+ARI,NFC West,Signing,Gardner Minshew,QB,1,"$5,750,000 ",,2026
+ARI,NFC West,Signing,Tyler Allgeier,RB,2,"$12,250,000 ",,2026
+ARI,NFC West,Signing,Kendrick Bourne,WR,2,"$10,000,000 ",,2026
+ARI,NFC West,Signing,Devin Duvernay,WR,1,,,2026
+ARI,NFC West,Re-signing,Simi Fehoko,WR,1,,,2026
+ARI,NFC West,Signing,Teagan Quitoriano,TE,1,,,2026
+ARI,NFC West,Signing,Oli Udoh,OT,1,,,2026
+ARI,NFC West,Signing,Matt Pryor,OG,1,,,2026
+ARI,NFC West,Signing,Isaac Seumalo,OG,3,"$31,500,000 ",,2026
+ARI,NFC West,Signing,Elijah Wilkinson,OG,2,,,2026
+ARI,NFC West,Signing,Andrew Billings,DL,1,,,2026
+ARI,NFC West,Re-signing,L.J. Collier,DL,1,"$2,000,000 ",,2026
+ARI,NFC West,Signing,Roy Lopez,DL,2,"$11,500,000 ","$7,000,000 ",2026
+ARI,NFC West,Signing,Jonah Williams,DL,1,,,2026
+ARI,NFC West,Signing,Andrew Wingard,S,1,"$3,000,000 ","$1,850,000 ",2026
+ARI,NFC West,Signing,Casey Kreiter,LS,1,,,2026
+ARI,NFC West,Re-signing,Blake Gillikin,P,1,"$2,650,000 ",,2026
+ARI,NFC West,Re-signing,Chad Ryland,K,1,,,2026
+ATL,NFC South,Signing,Trevor Siemian,QB,1,,,2026
+ATL,NFC South,Signing,Tua Tagovailoa,QB,1,,,2026
+ATL,NFC South,Signing,Tyler Goodson,RB,1,,,2026
+ATL,NFC South,Signing,Brian Robinson,RB,1,"$2,500,000 ",,2026
+ATL,NFC South,Signing,Jahan Dotson,WR,2,"$15,000,000 ","$10,000,000 ",2026
+ATL,NFC South,Signing,Olamide Zaccheaus,WR,1,,,2026
+ATL,NFC South,Signing,Austin Hooper,TE,1,"$3,250,000 ",,2026
+ATL,NFC South,Tag,Kyle Pitts,TE,1,"$15,045,000 ",,2026
+ATL,NFC South,Signing,Samson Ebukam,EDGE,1,,,2026
+ATL,NFC South,Signing,Azeez Ojulari,EDGE,1,,,2026
+ATL,NFC South,Signing,Cameron Thomas,DE,1,,,2026
+ATL,NFC South,Re-signing,LaCale London,DT,1,,,2026
+ATL,NFC South,Signing,Da'Shawn Hand,DL,1,"$3,000,000 ",,2026
+ATL,NFC South,Signing,Chris Williams,DL,1,,,2026
+ATL,NFC South,Signing,Christian Harris,LB,1,"$3,000,000 ",,2026
+ATL,NFC South,Trade,Sydney Brown,S,1,,,2026
+ATL,NFC South,Signing,Nick Folk,K,2,,,2026
+ATL,NFC South,Signing,Jake Bailey,P,1,,,2026
+BAL,AFC North,Re-signing,Tyler Huntley,QB,2,"$11,000,000 ",,2026
+BAL,AFC North,Signing,Durham Smythe,TE,1,,,2026
+BAL,AFC North,Signing,Danny Pinter,C,1,,,2026
+BAL,AFC North,Signing,John Simpson,OL,3,"$30,000,000 ",,2026
+BAL,AFC North,Signing,Trey Hendrickson,EDGE,4,"$112,000,000 ","$60,000,000 ",2026
+BAL,AFC North,Re-signing,Chidobe Awuzie,CB,1,"$5,000,000 ","$5,000,000 ",2026
+BAL,AFC North,Signing,Jaylinn Hawkins,S,1,,,2026
+BUF,AFC East,Signing,Kyle Allen,QB,2,,,2026
+BUF,AFC East,Signing,Shane Buechele,QB,1,,,2026
+BUF,AFC East,Trade,DJ Moore,WR,1,,,2026
+BUF,AFC East,Signing,Trent Sherfield,WR,1,,,2026
+BUF,AFC East,Signing,Dawson Knox,TE,3,,,2026
+BUF,AFC East,Signing,Austin Corbett,OL,1,,,2026
+BUF,AFC East,Signing,Lloyd Cushenberry,C,1,,,2026
+BUF,AFC East,Re-signing,Connor McGovern,C,4,"$52,000,000 ","$32,000,000 ",2026
+BUF,AFC East,Signing,Bradley Chubb,EDGE,3,"$43,500,000 ","$29,000,000 ",2026
+BUF,AFC East,Signing,Dee Alford,CB,3,,,2026
+BUF,AFC East,Re-signing,Sam Franklin,S,3,,,2026
+BUF,AFC East,Signing,Chauncey Gardner-Johnson,S,1,"$6,000,000 ",,2026
+BUF,AFC East,Signing,Geno Stone,S,1,,,2026
+BUF,AFC East,Signing,Tyler Bass,K,1,,,2026
+BUF,AFC East,Re-signing,Mitch Wishnowsky,P,1,,,2026
+CAR,NFC South,Signing,Kenny Pickett,QB,1,"$4,000,000 ",,2026
+CAR,NFC South,Signing,AJ Dillon,RB,1,,,2026
+CAR,NFC South,Signing,John Metchie III,WR,1,,,2026
+CAR,NFC South,Re-signing,David Moore,WR,1,,,2026
+CAR,NFC South,Signing,Feleipe Franks,TE,1,,,2026
+CAR,NFC South,Signing,Stone Forsythe,OT,1,,,2026
+CAR,NFC South,Signing,Rasheed Walker,OT,1,"$4,000,000 ","$3,215,000 ",2026
+CAR,NFC South,Signing,Luke Fortner,C,1,"$4,750,000 ",,2026
+CAR,NFC South,Re-signing,Trevis Gipson,EDGE,1,,,2026
+CAR,NFC South,Signing,Jaelan Phillips,EDGE,4,"$120,000,000 ",,2026
+CAR,NFC South,Signing,Nick Hampton,LB,1,,,2026
+CAR,NFC South,Signing,Devin Lloyd,LB,3,"$45,000,000 ","$25,000,000 ",2026
+CAR,NFC South,Re-signing,Isaiah Simmons,LB,1,,,2026
+CAR,NFC South,Re-signing,Akayleb Evans,CB,1,,,2026
+CAR,NFC South,Signing,Nick Scott,S,1,,,2026
+CAR,NFC South,Re-signing,J.J. Jansen,LS,1,,,2026
+CAR,NFC South,Signing,Sam Martin,P,2,"$5,000,000 ",,2026
+CHI,NFC North,Re-signing,Case Keenum,QB,2,"$4,400,000 ",,2026
+CHI,NFC North,Signing,Kalif Raymond,WR,1,"$5,100,000 ",,2026
+CHI,NFC North,Re-signing,Braxton Jones,OT,1,,,2026
+CHI,NFC North,Re-signing,Jordan McFadden,OG,1,,,2026
+CHI,NFC North,Signing,Jedrick Wills,OL,1,,,2026
+CHI,NFC North,Trade,Garrett Bradbury,C,1,,,2026
+CHI,NFC North,Signing,Kentavius Street,EDGE,1,,,2026
+CHI,NFC North,Re-signing,Daniel Hardy,DE,2,,,2026
+CHI,NFC North,Signing,Neville Gallimore,DL,2,"$12,000,000 ",,2026
+CHI,NFC North,Signing,James Lynch,DL,1,,,2026
+CHI,NFC North,Signing,Devin Bush,LB,3,"$30,000,000 ",,2026
+CHI,NFC North,Re-signing,D'Marco Jackson,LB,2,"$7,500,000 ",,2026
+CHI,NFC North,Signing,Jack Sanborn,LB,1,,,2026
+CHI,NFC North,Re-signing,Jaylon Jones,CB,1,,,2026
+CHI,NFC North,Signing,Cam Lewis,CB,1,,,2026
+CHI,NFC North,Signing,Coby Bryant,S,3,"$40,000,000 ","$25,750,000 ",2026
+CHI,NFC North,Re-signing,Elijah Hicks,S,1,,,2026
+CIN,AFC North,Re-signing,Joe Flacco,QB,1,"$6,000,000 ",,2026
+CIN,AFC North,Signing,Josh Johnson,QB,1,,,2026
+CIN,AFC North,Extension,Orlando Brown Jr.,OT,2,"$32,000,000 ",,2026
+CIN,AFC North,Re-signing,Dalton Risner,OG,1,,,2026
+CIN,AFC North,Signing,Boye Mafe,EDGE,3,"$60,000,000 ",,2026
+CIN,AFC North,Signing,Jonathan Allen,DL,2,"$26,000,000 ",,2026
+CIN,AFC North,Re-signing,Jalen Davis,CB,1,,,2026
+CIN,AFC North,Signing,Bryan Cook,S,3,"$40,250,000 ",,2026
+CLE,AFC North,Signing,Tylan Wallace,WR,1,,,2026
+CLE,AFC North,Signing,Jack Stoll,TE,1,,,2026
+CLE,AFC North,Trade,Tytus Howard,OT,3,"$63,000,000 ",,2026
+CLE,AFC North,Re-signing,Teven Jenkins,OG,1,,,2026
+CLE,AFC North,Signing,Zion Johnson,OG,3,"$49,500,000 ",,2026
+CLE,AFC North,Signing,Elgton Jenkins,OL,2,"$24,000,000 ","$20,000,000 ",2026
+CLE,AFC North,Signing,A.J. Epenesa,DE,1,,,2026
+CLE,AFC North,Re-signing,Julian Okwara,DE,1,,,2026
+CLE,AFC North,Signing,Kalia Davis,DT,1,"$3,000,000 ",,2026
+CLE,AFC North,Re-signing,Sam Kamara,DT,1,,,2026
+CLE,AFC North,Signing,Quincy Williams,LB,2,"$13,000,000 ","$9,000,000 ",2026
+CLE,AFC North,Signing,Daniel Thomas,S,1,,,2026
+CLE,AFC North,Re-signing,Corey Bojorquez,P,1,,,2026
+DAL,NFC East,Signing,Sam Howell,QB,1,"$2,500,000 ","$2,500,000 ",2026
+DAL,NFC East,Re-signing,Javonte Williams,RB,3,"$24,000,000 ","$16,000,000 ",2026
+DAL,NFC East,Tag,George Pickens,WR,1,"$27,298,000 ",,2026
+DAL,NFC East,Signing,Matt Hennessy,C,1,,,2026
+DAL,NFC East,Re-signing,Sam Williams,DE,1,"$3,000,000 ",,2026
+DAL,NFC East,Trade,Rashan Gary,EDGE,1,,,2026
+DAL,NFC East,Signing,Otito Ogbonnia,DL,1,"$3,000,000 ",,2026
+DAL,NFC East,Signing,Cobie Durant,CB,1,,,2026
+DAL,NFC East,Signing,Derion Kendrick,CB,1,,,2026
+DAL,NFC East,Signing,P.J. Locke,S,1,"$5,000,000 ",,2026
+DAL,NFC East,Signing,Jalen Thompson,S,3,"$36,000,000 ",,2026
+DAL,NFC East,Tag,Brandon Aubrey,K,1,"$5,760,000 ",,2026
+DEN,AFC West,Re-signing,Sam Ehlinger,QB,1,"$2,000,000 ",,2026
+DEN,AFC West,Re-signing,Adam Prentice,FB,1,,,2026
+DEN,AFC West,Re-signing,J.K. Dobbins,RB,2,"$20,000,000 ","$8,000,000 ",2026
+DEN,AFC West,Re-signing,Jaleel McLaughlin,RB,1,,,2026
+DEN,AFC West,Re-signing,Lil'Jordan Humphrey,WR,1,,,2026
+DEN,AFC West,Trade,Jaylen Waddle,WR,1,,,2026
+DEN,AFC West,Re-signing,Adam Trautman,TE,3,,,2026
+DEN,AFC West,Re-signing,Alex Singleton,LB,2,"$15,500,000 ","$11,000,000 ",2026
+DEN,AFC West,Re-signing,Justin Strnad,LB,3,"$19,500,000 ","$10,000,000 ",2026
+DET,NFC North,Signing,Teddy Bridgewater,QB,1,,,2026
+DET,NFC North,Signing,Isiah Pacheco,RB,1,"$1,810,000 ",,2026
+DET,NFC North,Signing,Greg Dortch,WR,1,,,2026
+DET,NFC North,Signing,Tyler Conklin,TE,1,,,2026
+DET,NFC North,Signing,Cade Mays,C,3,"$25,000,000 ",,2026
+DET,NFC North,Signing,Ben Bartch,OT,1,,,2026
+DET,NFC North,Signing,Larry Borom,OT,1,,,2026
+DET,NFC North,Trade,Juice Scruggs,OL,1,,,2026
+DET,NFC North,Signing,D.J. Wonnum,DE,1,"$6,000,000 ",,2026
+DET,NFC North,Signing,Damone Clark,LB,1,,,2026
+DET,NFC North,Re-signing,Malcolm Rodriguez,LB,1,,,2026
+DET,NFC North,Signing,Roger McCreary,CB,1,,,2026
+DET,NFC North,Re-signing,Rock Ya-Sin,CB,1,"$4,000,000 ",,2026
+DET,NFC North,Signing,Christian Izien,S,1,,,2026
+GB,NFC North,Signing,Skyy Moore,WR,1,,,2026
+GB,NFC North,Re-signing,Sean Rhyan,OL,3,"$33,000,000 ",,2026
+GB,NFC North,Signing,Javon Hargrave,DL,2,"$23,000,000 ",,2026
+GB,NFC North,Trade,Zaire Franklin,LB,1,,,2026
+GB,NFC North,Signing,Benjamin St-Juste,CB,2,"$10,000,000 ",,2026
+HOU,AFC South,Trade,David Montgomery,RB,1,,,2026
+HOU,AFC South,Signing,Foster Moreau,TE,1,,,2026
+HOU,AFC South,Extension,Dalton Schultz,TE,1,"$12,600,000 ",,2026
+HOU,AFC South,Signing,Evan Brown,OT,1,"$3,500,000 ",,2026
+HOU,AFC South,Re-signing,Trent Brown,OT,1,"$7,000,000 ",,2026
+HOU,AFC South,Signing,Braden Smith,OT,2,"$25,000,000 ","$13,500,000 ",2026
+HOU,AFC South,Re-signing,Ed Ingram,OG,3,"$37,500,000 ","$23,500,000 ",2026
+HOU,AFC South,Signing,Wyatt Teller,OG,2,"$16,000,000 ",,2026
+HOU,AFC South,Extension,Danielle Hunter,EDGE,1,"$40,100,000 ","$30,700,000 ",2026
+HOU,AFC South,Signing,Logan Hall,DE,2,"$7,000,000 ",,2026
+HOU,AFC South,Signing,Dominique Robinson,DE,1,,,2026
+HOU,AFC South,Re-signing,Naquan Jones,DL,1,"$2,000,000 ",,2026
+HOU,AFC South,Re-signing,Sheldon Rankins,DL,2,,"$12,000,000 ",2026
+HOU,AFC South,Re-signing,E.J. Speed,LB,2,"$10,000,000 ",,2026
+HOU,AFC South,Signing,Reed Blankenship,S,3,"$24,750,000 ","$16,500,000 ",2026
+HOU,AFC South,Re-signing,M.J. Stewart,S,1,,,2026
+HOU,AFC South,Extension,Ka'imi Fairbairn,K,2,"$13,000,000 ",,2026
+HOU,AFC South,Trade,Kai Kroeger,P,1,,,2026
+IND,AFC South,Re-signing,Daniel Jones,QB,2,"$88,000,000 ","$60,000,000 ",2026
+IND,AFC South,Re-signing,Alec Pierce,WR,4,"$114,000,000 ","$84,000,000 ",2026
+IND,AFC South,Re-signing,Laquon Treadwell,WR,1,,,2026
+IND,AFC South,Signing,Nick Westbrook-Ikhine,WR,1,,,2026
+IND,AFC South,Re-signing,Mo Alie-Cox,TE,1,,,2026
+IND,AFC South,Signing,Micheal Clemons,EDGE,1,,,2026
+IND,AFC South,Signing,Arden Key,EDGE,2,"$20,000,000 ","$11,000,000 ",2026
+IND,AFC South,Signing,Derrick Nnadi,DT,1,,,2026
+IND,AFC South,Signing,Jerry Tillery,DT,1,,,2026
+IND,AFC South,Trade,Colby Wooden,DT,1,,,2026
+IND,AFC South,Signing,Akeem Davis-Gaither,LB,1,,,2026
+IND,AFC South,Re-signing,Cameron Mitchell,CB,1,,,2026
+IND,AFC South,Signing,Cam Taylor-Britt,CB,1,,,2026
+IND,AFC South,Signing,Jonathan Owens,S,1,,,2026
+IND,AFC South,Re-signing,Blake Grupe,K,1,"$1,400,000 ",,2026
+JAX,AFC South,Re-signing,DeeJay Dallas,RB,1,,,2026
+JAX,AFC South,Signing,Chris Rodriguez Jr.,RB,2,"$10,000,000 ","$6,200,000 ",2026
+JAX,AFC South,Re-signing,Quintin Morris,TE,1,,,2026
+JAX,AFC South,Re-signing,Dennis Gardeck,EDGE,1,,,2026
+JAX,AFC South,Re-signing,Matt Dickerson,DL,1,,,2026
+JAX,AFC South,Re-signing,Montaric Brown,CB,3,"$33,000,000 ",,2026
+KC,AFC West,Trade,Justin Fields,QB,1,,,2026
+KC,AFC West,Signing,Emari Demercado,RB,1,,,2026
+KC,AFC West,Signing,Kenneth Walker III,RB,3,"$45,000,000 ","$28,700,000 ",2026
+KC,AFC West,Re-signing,Tyquan Thornton,WR,2,"$11,000,000 ",,2026
+KC,AFC West,Re-signing,Travis Kelce,TE,3,"$54,735,000 ",,2026
+KC,AFC West,Signing,Khyiris Tonga,DL,3,"$21,000,000 ","$14,000,000 ",2026
+KC,AFC West,Signing,Jack Cochrane,LB,1,,,2026
+KC,AFC West,Signing,Kader Kohou,CB,1,,,2026
+KC,AFC West,Signing,Alohi Gilman,S,3,"$24,750,000 ","$15,000,000 ",2026
+KC,AFC West,Re-signing,James Winchester,LS,1,"$1,750,000 ",,2026
+LV,AFC West,Signing,Connor Heyward,RB,2,"$5,500,000 ","$2,000,000 ",2026
+LV,AFC West,Signing,Jalen Nailor,WR,3,"$35,030,000 ","$23,000,000 ",2026
+LV,AFC West,Signing,Spencer Burford,OG,1,,,2026
+LV,AFC West,Signing,Tyler Linderbaum,C,3,"$81,000,000 ",,2026
+LV,AFC West,Re-signing,Thomas Booker,DT,1,,,2026
+LV,AFC West,Re-signing,Malcolm Koonce,EDGE,1,"$11,000,000 ",,2026
+LV,AFC West,Signing,Kwity Paye,EDGE,1,"$16,000,000 ",,2026
+LV,AFC West,Signing,Nakobe Dean,LB,3,"$36,000,000 ","$20,000,000 ",2026
+LV,AFC West,Signing,Quay Walker,LB,3,"$40,500,000 ","$28,000,000 ",2026
+LV,AFC West,Trade,Taron Johnson,CB,1,,,2026
+LV,AFC West,Re-signing,Eric Stokes,CB,3,"$30,000,000 ","$20,000,000 ",2026
+LV,AFC West,Signing,Matt Gay,K,1,,,2026
+LAC,AFC West,Re-signing,Trey Lance,QB,1,"$2,500,000 ","$2,000,000 ",2026
+LAC,AFC West,Signing,Keaton Mitchell,RB,2,"$9,250,000 ","$5,000,000 ",2026
+LAC,AFC West,Signing,Alec Ingold,FB,2,"$7,500,000 ",,2026
+LAC,AFC West,Signing,Charlie Kolar,TE,3,"$24,300,000 ","$17,000,000 ",2026
+LAC,AFC West,Re-signing,Trevor Penning,OT,1,"$3,500,000 ",,2026
+LAC,AFC West,Signing,Kayode Awosika,OG,1,,,2026
+LAC,AFC West,Signing,Cole Strange,OG,2,"$13,000,000 ","$9,000,000 ",2026
+LAC,AFC West,Signing,Tyler Biadasz,C,3,"$30,000,000 ",,2026
+LAC,AFC West,Re-signing,Trey Pipkins,OL,2,"$10,000,000 ",,2026
+LAC,AFC West,Extension,Teair Tart,DT,3,"$37,500,000 ",,2026
+LAC,AFC West,Re-signing,Khalil Mack,EDGE,1,"$18,000,000 ",,2026
+LAC,AFC West,Signing,Dalvin Tomlinson,DL,1,"$7,500,000 ","$6,000,000 ",2026
+LAC,AFC West,Re-signing,Deane Leonard,LB,1,"$2,000,000 ",,2026
+LAC,AFC West,Re-signing,Denzel Perryman,LB,1,,,2026
+LAC,AFC West,Re-signing,Del'Shawn Phillips,LB,2,"$7,500,000 ",,2026
+LAC,AFC West,Re-signing,Tony Jefferson,S,1,,,2026
+LAC,AFC West,Re-signing,Josh Harris,LS,1,,,2026
+LAR,NFC West,Re-signing,Ronnie Rivers,RB,1,,,2026
+LAR,NFC West,Re-signing,Tyler Higbee,TE,2,"$8,000,000 ",,2026
+LAR,NFC West,Re-signing,David Quessenberry,OT,1,,,2026
+LAR,NFC West,Signing,Grant Stuard,LB,2,,,2026
+LAR,NFC West,Trade,Trent McDuffie,CB,4,"$124,000,000 ",,2026
+LAR,NFC West,Signing,Jaylen Watson,CB,3,"$51,000,000 ","$34,000,000 ",2026
+LAR,NFC West,Re-signing,Kamren Curl,S,3,"$36,000,000 ",,2026
+LAR,NFC West,Signing,Joe Cardona,LS,1,,,2026
+MIA,AFC East,Signing,Malik Willis,QB,3,"$67,500,000 ","$45,000,000 ",2026
+MIA,AFC East,Signing,Tutu Atwell,WR,1,"$1,400,000 ","$1,075,000 ",2026
+MIA,AFC East,Signing,Jalen Tolbert,WR,1,,,2026
+MIA,AFC East,Re-signing,Greg Dulcich,TE,1,"$3,250,000 ","$2,910,000 ",2026
+MIA,AFC East,Signing,Ben Sims,TE,1,,,2026
+MIA,AFC East,Signing,Charlie Heck,OT,1,,,2026
+MIA,AFC East,Signing,Jamaree Salyer,OT,1,,,2026
+MIA,AFC East,Signing,David Ojabo,EDGE,1,,,2026
+MIA,AFC East,Signing,Josh Uche,EDGE,1,,,2026
+MIA,AFC East,Re-signing,Matthew Butler,DT,1,,,2026
+MIA,AFC East,Re-signing,Willie Gay Jr.,LB,1,,,2026
+MIA,AFC East,Signing,Marco Wilson,CB,1,,,2026
+MIA,AFC East,Signing,Zayne Anderson,S,1,,,2026
+MIA,AFC East,Signing,Ronnie Harrison,S,1,,,2026
+MIA,AFC East,Signing,Lonnie Johnson,DB,1,,,2026
+MIA,AFC East,Signing,Zane Gonzalez,K,1,,,2026
+MIA,AFC East,Re-signing,Riley Patterson,K,1,,,2026
+MIA,AFC East,Signing,Bradley Pinion,P,1,,,2026
+MIN,NFC North,Signing,Kyler Murray,QB,1,,,2026
+MIN,NFC North,Re-signing,Carson Wentz,QB,1,"$3,000,000 ","$2,645,000 ",2026
+MIN,NFC North,Extension,Aaron Jones,RB,1,"$5,500,000 ",,2026
+MIN,NFC North,Signing,Ryan Van Demark,OL,1,"$4,200,000 ","$4,200,000 ",2026
+MIN,NFC North,Re-signing,Eric Wilson,LB,3,"$22,500,000 ","$12,500,000 ",2026
+MIN,NFC North,Signing,James Pierre,CB,2,"$8,500,000 ","$3,700,000 ",2026
+MIN,NFC North,Re-signing,Tavierre Thomas,S,1,,,2026
+MIN,NFC North,Signing,Johnny Hekker,P,1,,,2026
+MIN,NFC North,Re-signing,Andrew DePaola,LS,1,,,2026
+NE,AFC East,Signing,Alijah Vera-Tucker,OL,3,"$42,000,000 ","$21,000,000 ",2026
+NE,AFC East,Signing,Reggie Gilliam,FB,3,"$12,000,000 ","$6,000,000 ",2026
+NE,AFC East,Signing,Romeo Doubs,WR,4,"$70,000,000 ",,2026
+NE,AFC East,Signing,Julian Hill,TE,1,,,2026
+NE,AFC East,Signing,James Hudson,OL,1,,,2026
+NE,AFC East,Signing,Dre'Mont Jones,DL,3,"$39,500,000 ",,2026
+NE,AFC East,Signing,K.J. Britt,LB,1,,,2026
+NE,AFC East,Signing,Kindle Vildor,CB,1,,,2026
+NE,AFC East,Signing,Kevin Byard,S,1,"$9,000,000 ",,2026
+NO,NFC South,Signing,Zach Wilson,QB,1,,,2026
+NO,NFC South,Signing,Ty Chandler,RB,1,,,2026
+NO,NFC South,Signing,Travis Etienne,RB,4,"$52,000,000 ",,2026
+NO,NFC South,Signing,Noah Fant,TE,2,,,2026
+NO,NFC South,Signing,David Edwards,OG,1,,,2026
+NO,NFC South,Re-signing,Dillon Radunz,OL,2,,,2026
+NO,NFC South,Re-signing,Chris Rumph II,EDGE,1,,,2026
+NO,NFC South,Re-signing,John Ridgeway,DL,2,"$6,200,000 ",,2026
+NO,NFC South,Signing,Kaden Elliss,LB,3,"$33,000,000 ","$23,000,000 ",2026
+NO,NFC South,Re-signing,Julian Blackmon,S,1,,,2026
+NO,NFC South,Re-signing,Terrell Burgess,S,1,,,2026
+NO,NFC South,Signing,Ryan Wright,P,4,"$14,000,000 ",,2026
+NYG,NFC East,Signing,Patrick Ricard,FB,2,"$7,630,000 ",,2026
+NYG,NFC East,Signing,Calvin Austin III,WR,1,,,2026
+NYG,NFC East,Re-signing,Isaiah Hodgins,WR,1,,,2026
+NYG,NFC East,Signing,Darnell Mooney,WR,1,"$10,000,000 ",,2026
+NYG,NFC East,Re-signing,Gunner Olszewski,WR,1,,,2026
+NYG,NFC East,Signing,Isaiah Likely,TE,3,"$40,000,000 ",,2026
+NYG,NFC East,Re-signing,Jermaine Eluemunor,OL,1,,,2026
+NYG,NFC East,Re-signing,Joshua Ezeudu,OL,1,,,2026
+NYG,NFC East,Re-signing,Evan Neal,OL,1,,,2026
+NYG,NFC East,Re-signing,Aaron Stinnie,OL,1,,,2026
+NYG,NFC East,Signing,Tremaine Edmunds,LB,3,"$36,000,000 ","$23,700,000 ",2026
+NYG,NFC East,Signing,Cam Jones,LB,1,,,2026
+NYG,NFC East,Re-signing,Micah McFadden,LB,1,,,2026
+NYG,NFC East,Signing,Greg Newsome II,CB,1,"$8,000,000 ","$3,000,000 ",2026
+NYG,NFC East,Signing,Jason Pinnock,S,1,,,2026
+NYG,NFC East,Signing,Ar'Darius Washington,S,1,,,2026
+NYG,NFC East,Signing,Jason Sanders,K,1,,,2026
+NYG,NFC East,Signing,Jordan Stout,P,1,,,2026
+NYG,NFC East,Signing,Zach Triner,LS,1,,,2026
+NYJ,AFC East,Trade,Geno Smith,QB,1,,,2026
+NYJ,AFC East,Tag,Breece Hall,RB,1,"$14,293,000 ",,2026
+NYJ,AFC East,Re-signing,Kene Nwangwu,RB,1,"$2,000,000 ",,2026
+NYJ,AFC East,Re-signing,Andrew Beck,FB,1,,,2026
+NYJ,AFC East,Re-signing,Jelani Woods,TE,1,,,2026
+NYJ,AFC East,Re-signing,Chukwuma Okorafor,OT,1,,,2026
+NYJ,AFC East,Signing,Dylan Parham,OG,2,"$20,000,000 ",,2026
+NYJ,AFC East,Re-signing,Max Mitchell,OL,1,,,2026
+NYJ,AFC East,Signing,Kingsley Enagbare,EDGE,1,"$10,000,000 ",,2026
+NYJ,AFC East,Signing,Joseph Ossai,EDGE,3,"$36,000,000 ",,2026
+NYJ,AFC East,Signing,David Onyemata,DL,1,"$10,500,000 ","$9,650,000 ",2026
+NYJ,AFC East,Trade,T'Vondre Sweat,DL,1,,,2026
+NYJ,AFC East,Signing,Demario Davis,LB,2,"$22,000,000 ","$15,000,000 ",2026
+NYJ,AFC East,Re-signing,Mykal Walker,LB,1,,,2026
+NYJ,AFC East,Signing,Nahshon Wright,CB,1,"$5,500,000 ",,2026
+NYJ,AFC East,Signing,Dane Belton,S,1,"$4,000,000 ",,2026
+NYJ,AFC East,Re-signing,Andre Cisco,S,1,"$5,250,000 ",,2026
+NYJ,AFC East,Trade,Minkah Fitzpatrick,S,3,"$40,000,000 ",,2026
+NYJ,AFC East,Signing,Cade York,K,1,,,2026
+PHI,NFC East,Trade,Andy Dalton,QB,1,,,2026
+PHI,NFC East,Signing,Dameon Pierce,RB,1,,,2026
+PHI,NFC East,Signing,Marquise Brown,WR,1,"$6,500,000 ",,2026
+PHI,NFC East,Signing,Elijah Moore,WR,1,,,2026
+PHI,NFC East,Re-signing,Grant Calcaterra,TE,1,,,2026
+PHI,NFC East,Signing,Dallas Goedert,TE,1,,,2026
+PHI,NFC East,Signing,Johnny Mundt,TE,1,,,2026
+PHI,NFC East,Signing,Stone Smartt,TE,1,,,2026
+PHI,NFC East,Re-signing,Fred Johnson,OL,1,,,2026
+PHI,NFC East,Extension,Jordan Davis,DT,3,"$78,000,000 ","$65,000,000 ",2026
+PHI,NFC East,Signing,Arnold Ebiketie,LB,1,"$7,300,000 ","$4,300,000 ",2026
+PHI,NFC East,Signing,Jonathan Jones,CB,1,,,2026
+PHI,NFC East,Signing,Tariq Woolen,CB,1,"$12,000,000 ","$12,000,000 ",2026
+PHI,NFC East,Signing,Marcus Epps,S,1,,,2026
+PHI,NFC East,Re-signing,Braden Mann,P,4,,,2026
+PIT,AFC North,Signing,Rico Dowdle,RB,2,"$12,250,000 ",,2026
+PIT,AFC North,Signing,Travis Homer,RB,1,,,2026
+PIT,AFC North,Trade,Michael Pittman,WR,3,"$59,000,000 ",,2026
+PIT,AFC North,Signing,Jack Driscoll,OT,1,,,2026
+PIT,AFC North,Re-signing,Ryan McCollum,C,1,,,2026
+PIT,AFC North,Extension,Cameron Heyward,DL,2,"$32,250,000 ","$16,250,000 ",2026
+PIT,AFC North,Signing,Sebastian Joseph-Day,DL,2,,,2026
+PIT,AFC North,Re-signing,Esezi Otomewo,DL,1,,,2026
+PIT,AFC North,Re-signing,Cole Holcomb,LB,2,"$5,000,000 ",,2026
+PIT,AFC North,Signing,Jamel Dean,CB,3,"$36,750,000 ",,2026
+PIT,AFC North,Re-signing,Asante Samuel Jr.,CB,1,"$4,000,000 ",,2026
+PIT,AFC North,Signing,Jaquan Brisker,S,1,"$5,500,000 ",,2026
+PIT,AFC North,Signing,Darnell Savage,S,1,,,2026
+SEA,NFC West,Signing,Emanuel Wilson,RB,1,"$2,100,000 ",,2026
+SEA,NFC West,Re-signing,Jake Bobo,WR,2,"$5,500,000 ","$4,500,000 ",2026
+SEA,NFC West,Re-signing,Rashid Shaheed,WR,3,"$51,000,000 ",,2026
+SEA,NFC West,Extension,Jaxon Smith-Njigba,WR,4,"$168,600,000 ","$120,000,000 ",2026
+SEA,NFC West,Re-signing,Josh Jones,OT,1,,,2026
+SEA,NFC West,Signing,Noah Igbinoghene,CB,1,,,2026
+SEA,NFC West,Re-signing,Shemar Jean-Charles,CB,1,,,2026
+SEA,NFC West,Re-signing,Joshua Jobe,CB,3,"$24,000,000 ","$14,250,000 ",2026
+SEA,NFC West,Signing,D'Anthony Bell,S,1,,,2026
+SEA,NFC West,Signing,Rodney Thomas,S,1,,,2026
+SEA,NFC West,Re-signing,Chris Stoll,LS,2,,,2026
+SF,NFC West,Re-signing,Patrick Taylor,RB,1,,,2026
+SF,NFC West,Signing,Mike Evans,WR,3,,,2026
+SF,NFC West,Signing,Christian Kirk,WR,1,,,2026
+SF,NFC West,Signing,Vederian Lowe,OT,2,"$12,000,000 ","$5,750,000 ",2026
+SF,NFC West,Signing,Brett Toth,OT,1,,,2026
+SF,NFC West,Signing,Robert Jones,OG,1,,,2026
+SF,NFC West,Trade,Osa Odighizuwa,DT,1,,,2026
+SF,NFC West,Re-signing,Luke Gifford,LB,2,"$5,300,000 ",,2026
+SF,NFC West,Signing,Dre Greenlaw,LB,1,"$7,500,000 ",,2026
+SF,NFC West,Signing,Nate Hobbs,CB,1,"$4,500,000 ",,2026
+SF,NFC West,Re-signing,Jon Weeks,LS,1,,,2026
+SF,NFC West,Re-signing,Eddy Pineiro,K,4,"$17,000,000 ","$10,000,000 ",2026
+SF,NFC West,Signing,Corliss Waitman,P,1,,,2026
+TB,NFC South,Signing,Jake Browning,QB,1,,,2026
+TB,NFC South,Signing,Kenneth Gainwell,RB,2,"$14,000,000 ",,2026
+TB,NFC South,Signing,Ko Kieft,TE,1,,,2026
+TB,NFC South,Re-signing,Cade Otton,TE,3,"$30,000,000 ","$20,000,000 ",2026
+TB,NFC South,Re-signing,Dan Feeney,OL,1,,,2026
+TB,NFC South,Signing,Al-Quadin Muhammad,EDGE,1,"$6,000,000 ",,2026
+TB,NFC South,Signing,A'Shawn Robinson,DL,1,"$10,000,000 ","$10,000,000 ",2026
+TB,NFC South,Signing,Alex Anzalone,LB,2,"$17,000,000 ",,2026
+TB,NFC South,Signing,Christian Rozeboom,LB,1,,,2026
+TB,NFC South,Signing,Miles Killebrew,S,1,,,2026
+TEN,AFC South,Signing,Mitchell Trubisky,QB,2,,,2026
+TEN,AFC South,Re-signing,Julius Chestnut,RB,1,,,2026
+TEN,AFC South,Signing,Wan'Dale Robinson,WR,4,"$78,000,000 ","$38,000,000 ",2026
+TEN,AFC South,Signing,Daniel Bellinger,TE,1,,,2026
+TEN,AFC South,Signing,Kylen Granson,TE,1,,,2026
+TEN,AFC South,Signing,Austin Deculus,OT,1,,,2026
+TEN,AFC South,Signing,Cordell Volson,OG,1,"$2,500,000 ",,2026
+TEN,AFC South,Signing,Austin Schlottmann,C,2,"$9,000,000 ","$3,500,000 ",2026
+TEN,AFC South,Trade,Jermaine Johnson II,EDGE,1,,,2026
+TEN,AFC South,Signing,Jacob Martin,EDGE,2,"$11,000,000 ",,2026
+TEN,AFC South,Signing,Jordan Elliott,DL,1,,,2026
+TEN,AFC South,Signing,John Franklin-Myers,DL,3,"$63,000,000 ","$42,000,000 ",2026
+TEN,AFC South,Signing,Malik Herring,DL,1,,,2026
+TEN,AFC South,Trade,Solomon Thomas,DL,1,,,2026
+TEN,AFC South,Signing,Mohamoud Diabate,LB,1,,,2026
+TEN,AFC South,Signing,Cordale Flott,CB,3,"$45,000,000 ","$32,000,000 ",2026
+TEN,AFC South,Signing,Alontae Taylor,CB,3,"$60,000,000 ","$42,000,000 ",2026
+TEN,AFC South,Signing,Joshua Williams,CB,2,,,2026
+TEN,AFC South,Signing,Tony Adams,S,1,,,2026
+TEN,AFC South,Re-signing,Joey Slye,K,1,,,2026
+TEN,AFC South,Re-signing,Morgan Cox,LS,1,,,2026
+TEN,AFC South,Signing,Tommy Townsend,P,1,,,2026
+WAS,NFC East,Re-signing,Marcus Mariota,QB,1,"$7,000,000 ",,2026
+WAS,NFC East,Signing,Jerome Ford,RB,1,,,2026
+WAS,NFC East,Re-signing,Jeremy McNichols,RB,1,,,2026
+WAS,NFC East,Signing,Rachaad White,RB,1,,,2026
+WAS,NFC East,Signing,Dyami Brown,WR,1,"$3,000,000 ",,2026
+WAS,NFC East,Re-signing,Treylon Burks,WR,1,"$4,000,000 ",,2026
+WAS,NFC East,Signing,Van Jefferson,WR,1,,,2026
+WAS,NFC East,Signing,Chigoziem Okonkwo,TE,3,"$30,000,000 ",,2026
+WAS,NFC East,Extension,Laremy Tunsil,OT,2,"$60,200,000 ","$52,650,000 ",2026
+WAS,NFC East,Signing,Foster Sarell,OT,1,,,2026
+WAS,NFC East,Extension,Nick Allegretti,OL,2,,,2026
+WAS,NFC East,Re-signing,Trent Scott,OL,1,,,2026
+WAS,NFC East,Re-signing,Andrew Wylie,OL,1,,,2026
+WAS,NFC East,Re-signing,Chris Paul,OG,1,,,2026
+WAS,NFC East,Signing,K'Lavon Chaisson,EDGE,1,"$12,000,000 ",,2026
+WAS,NFC East,Signing,Charles Omenihu,EDGE,1,"$4,000,000 ",,2026
+WAS,NFC East,Signing,Odafe Oweh,EDGE,4,"$100,000,000 ","$68,000,000 ",2026
+WAS,NFC East,Re-signing,Deatrich Wise,EDGE,1,,,2026
+WAS,NFC East,Signing,Tim Settle,DT,3,"$24,000,000 ",,2026
+WAS,NFC East,Signing,Leo Chenal,LB,3,"$24,750,000 ",,2026
+WAS,NFC East,Signing,Amik Robertson,CB,2,"$16,000,000 ","$9,300,000 ",2026
+WAS,NFC East,Signing,Ahkello Witherspoon,CB,1,,,2026
+WAS,NFC East,Signing,Nick Cross,S,2,"$14,000,000 ",,2026
+WAS,NFC East,Extension,Jeremy Reaves,S,1,,,2026
+WAS,NFC East,Re-signing,Tress Way,P,1,,,2026
+WAS,NFC East,Re-signing,Jake Moody,K,1,,,2026
